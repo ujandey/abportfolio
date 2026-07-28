@@ -1,0 +1,251 @@
+.hunger {
+  background: #fff;
+  color: #101012;
+  padding: 120px 40px 140px;
+}
+
+.hunger__inner {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.hunger__heading {
+  font-family: "Inter Tight", system-ui, sans-serif;
+  font-weight: 600;
+  font-size: 64px;
+  line-height: 1.04;
+  letter-spacing: -0.03em;
+  max-width: 13ch;
+  margin: 0 0 64px;
+}
+
+.hunger__canvas {
+  position: relative;
+  width: 74%;
+}
+
+.hunger__photo {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 10 / 11;
+  border-radius: 36px;
+  overflow: hidden;
+  background: linear-gradient(100deg, #2f6ce0, #0b1e6e);
+}
+
+.hunger__photo-img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 85%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.hunger__photo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 45%,
+    rgba(11, 30, 110, 0.55) 65%,
+    #0b1e6e 88%
+  );
+  pointer-events: none;
+}
+
+.hunger__panel {
+  position: absolute;
+  top: -20px;
+  left: 56%;
+  right: -280px;
+  background: #fff;
+  border-radius: 0 0 0 36px;
+  padding: 56px 8px 56px 60px;
+}
+
+.hunger__panel-title {
+  font-family: "Inter Tight", system-ui, sans-serif;
+  font-weight: 600;
+  font-size: 28px;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  max-width: 18ch;
+  margin: 0 0 20px;
+}
+
+.hunger__panel-copy {
+  color: #52525a;
+  font-size: 17px;
+  line-height: 1.65;
+  max-width: 34ch;
+  margin: 0 0 32px;
+}
+
+.hunger__panel-link {
+  display: inline-block;
+  background: #f1f1ee;
+  color: #101012;
+  font-weight: 500;
+  font-size: 15px;
+  padding: 15px 28px;
+  border-radius: 999px;
+  transition: background 0.15s ease;
+}
+
+.hunger__panel-link:hover {
+  background: #e8e8e4;
+  color: #101012;
+}
+
+.hunger__slab {
+  position: absolute;
+  bottom: 0;
+  left: -44px;
+  width: calc(64% + 44px);
+  background: #fff;
+  border-radius: 0 36px 0 0;
+  padding: 44px 56px 12px 52px;
+}
+
+.hunger__slab-label {
+  font-size: 16px;
+  color: #52525a;
+  margin: 0 0 26px;
+}
+
+.hunger__slab-logos {
+  display: flex;
+  align-items: center;
+  gap: 48px;
+  flex-wrap: wrap;
+  color: #9a9aa2;
+}
+
+.hunger__slab-logo {
+  height: 28px;
+  width: auto;
+  object-fit: contain;
+  filter: grayscale(1) opacity(0.55);
+  transition: filter 0.3s ease;
+}
+
+.hunger__slab-logo:hover {
+  filter: grayscale(0) opacity(1);
+}
+
+/* fillet corners — concave rounded joins where the white panels meet the photo */
+.hunger__fillet {
+  position: absolute;
+  width: 36px;
+  height: 36px;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.hunger__fillet::after {
+  content: "";
+  position: absolute;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  box-shadow: 0 0 0 72px #fff;
+}
+
+.hunger__fillet--panel-top {
+  right: calc(100% - 1px);
+  top: 20px;
+}
+.hunger__fillet--panel-top::after {
+  left: -36px;
+  top: 0;
+}
+
+.hunger__fillet--panel-right {
+  top: calc(100% - 1px);
+  right: 280px;
+}
+.hunger__fillet--panel-right::after {
+  left: -36px;
+  top: 0;
+}
+
+.hunger__fillet--slab-left {
+  bottom: calc(100% - 1px);
+  left: 44px;
+}
+.hunger__fillet--slab-left::after {
+  left: 0;
+  top: -36px;
+}
+
+.hunger__fillet--slab-bottom {
+  left: calc(100% - 1px);
+  bottom: 0;
+}
+.hunger__fillet--slab-bottom::after {
+  left: 0;
+  top: -36px;
+}
+
+@media (max-width: 900px) {
+  .hunger {
+    padding: 72px 24px 90px;
+  }
+
+  .hunger__heading {
+    font-size: clamp(30px, 8vw, 64px);
+    max-width: none;
+    margin-bottom: 40px;
+  }
+
+  .hunger__canvas {
+    width: 100%;
+  }
+
+  .hunger__photo {
+    aspect-ratio: 4 / 3;
+  }
+
+  .hunger__photo-img {
+    width: 100%;
+  }
+
+  .hunger__photo::after {
+    background: none;
+  }
+
+  .hunger__fillet {
+    display: none;
+  }
+
+  .hunger__panel {
+    position: static;
+    border-radius: 20px;
+    padding: 32px 24px;
+    margin-top: 20px;
+  }
+
+  .hunger__panel-title {
+    font-size: 24px;
+    max-width: none;
+  }
+
+  .hunger__panel-copy {
+    max-width: none;
+  }
+
+  .hunger__slab {
+    position: static;
+    width: 100%;
+    border-radius: 20px;
+    padding: 28px 24px;
+    margin-top: 16px;
+  }
+
+  .hunger__slab-logos {
+    gap: 32px;
+  }
+}

@@ -1,0 +1,354 @@
+.books {
+  background: #101012;
+  color: #fff;
+  padding: 130px 60px 150px;
+}
+
+.books__inner {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  grid-template-areas:
+    "intro shelf"
+    "detail detail";
+  column-gap: 80px;
+  row-gap: 64px;
+  align-items: end;
+}
+
+.books__intro {
+  grid-area: intro;
+  align-self: start;
+  padding-top: 6px;
+}
+
+.books__eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.32em;
+  color: #8a8a8a;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+
+.books__eyebrow-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #2f6bff;
+}
+
+.books__heading {
+  font-family: "Playfair Display", serif;
+  font-weight: 600;
+  font-size: 44px;
+  letter-spacing: -0.01em;
+  margin-bottom: 20px;
+}
+
+.books__lede {
+  font-family: "Cormorant Garamond", "Playfair Display", serif;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 1.5;
+  color: #c4c4c4;
+  max-width: 30ch;
+  margin-bottom: 28px;
+}
+
+.books__explore {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: "Cormorant Garamond", "Playfair Display", serif;
+  font-style: italic;
+  font-size: 19px;
+  font-weight: 500;
+  color: #fff;
+  transition: color 0.15s ease;
+}
+
+.books__explore:hover {
+  color: #b8b8b8;
+}
+
+.books__explore-chevron {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(-45deg);
+}
+
+.books__shelf-wrap {
+  grid-area: shelf;
+  display: flex;
+  flex-direction: column;
+}
+
+.books__shelf {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  height: 360px;
+  padding: 0 20px 24px;
+}
+
+.books__book {
+  appearance: none;
+  border: none;
+  background: none;
+  cursor: pointer;
+  width: 188px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  position: relative;
+}
+
+.books__book:not(:first-child) {
+  margin-left: -56px;
+}
+
+.books__book:hover,
+.books__book:focus-visible {
+  z-index: 5;
+}
+
+.books__book--active {
+  z-index: 5;
+}
+
+.books__book:focus-visible {
+  outline: none;
+}
+
+.books__cover-wrap {
+  position: relative;
+  display: block;
+  width: 188px;
+  aspect-ratio: 2 / 3;
+  border-radius: 4px 8px 8px 4px;
+  overflow: hidden;
+  transform-origin: bottom center;
+  transform: rotate(-11deg);
+  box-shadow:
+    4px 10px 12px rgba(0, 0, 0, 0.3),
+    8px 20px 30px rgba(0, 0, 0, 0.4);
+  transition:
+    transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.4s ease;
+}
+
+.books__book:hover .books__cover-wrap,
+.books__book:focus-visible .books__cover-wrap,
+.books__book--active .books__cover-wrap {
+  transform: rotate(0deg) translateY(-16px) scale(1.08);
+  box-shadow:
+    0 4px 10px rgba(0, 0, 0, 0.25),
+    0 24px 44px rgba(0, 0, 0, 0.5);
+}
+
+.books__cover-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.books__cover-wrap::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  left: 0;
+  width: 16%;
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.5), transparent);
+  z-index: 1;
+}
+
+.books__book-caption {
+  font-family: "Cormorant Garamond", "Playfair Display", serif;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 16px;
+  color: #d8d8d8;
+  text-align: center;
+  max-width: 20ch;
+  line-height: 1.3;
+  opacity: 0;
+  transform: translateY(-4px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.books__book:hover .books__book-caption,
+.books__book:focus-visible .books__book-caption,
+.books__book--active .books__book-caption {
+  opacity: 1;
+  transform: none;
+}
+
+.books__detail {
+  grid-area: detail;
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+  padding-top: 44px;
+  animation: books-fade 0.4s ease;
+}
+
+@keyframes books-fade {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.books__detail-subtitle {
+  font-family: "Cormorant Garamond", "Playfair Display", serif;
+  font-style: italic;
+  font-weight: 600;
+  font-size: 18px;
+  letter-spacing: 0.02em;
+  color: #8fa9ff;
+  margin-bottom: 10px;
+}
+
+.books__detail-title {
+  font-family: "Playfair Display", serif;
+  font-weight: 600;
+  font-size: 34px;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  margin-bottom: 18px;
+  max-width: 24ch;
+}
+
+.books__detail-description {
+  font-family: "Cormorant Garamond", "Playfair Display", serif;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.6;
+  color: #c4c4c4;
+  max-width: 58ch;
+  margin-bottom: 16px;
+}
+
+.books__detail-description--clamped {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.books__read-more {
+  display: inline-block;
+  background: none;
+  border: none;
+  padding: 0;
+  margin-bottom: 20px;
+  font-family: "Cormorant Garamond", "Playfair Display", serif;
+  font-weight: 600;
+  font-size: 16px;
+  color: #fff;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+
+.books__read-more:hover {
+  color: #c4c4c4;
+}
+
+.books__buy {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  color: #000;
+  font-size: 15px;
+  font-weight: 700;
+  padding: 16px 32px;
+  border-radius: 999px;
+  transition: background 0.15s ease;
+}
+
+.books__buy:hover {
+  background: #e2e2e2;
+  color: #000;
+}
+
+@media (max-width: 900px) {
+  .books {
+    padding: 90px 24px 110px;
+  }
+
+  .books__inner {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "intro"
+      "shelf"
+      "detail";
+    row-gap: 48px;
+  }
+
+  .books__lede {
+    max-width: none;
+  }
+
+  .books__shelf {
+    height: 260px;
+  }
+
+  .books__book {
+    width: 136px;
+  }
+
+  .books__book:not(:first-child) {
+    margin-left: -38px;
+  }
+
+  .books__cover-wrap {
+    width: 136px;
+  }
+}
+
+@media (max-width: 480px) {
+  .books {
+    padding: 60px 20px 72px;
+  }
+
+  .books__shelf {
+    height: 210px;
+    padding: 0 8px 20px;
+  }
+
+  .books__book {
+    width: 96px;
+  }
+
+  .books__book:not(:first-child) {
+    margin-left: -26px;
+  }
+
+  .books__cover-wrap {
+    width: 96px;
+  }
+
+  .books__detail-title {
+    font-size: 24px;
+  }
+
+  .books__detail-description {
+    font-size: 17px;
+  }
+}

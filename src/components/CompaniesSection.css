@@ -1,0 +1,141 @@
+.companies {
+  background: #000;
+  color: #fff;
+  font-family: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  padding: clamp(56px, 6vw, 104px) clamp(20px, 5vw, 80px);
+}
+
+.companies a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.companies a:hover {
+  color: #2f6bff;
+}
+
+.companies__inner {
+  max-width: 1320px;
+  margin: 0 auto;
+}
+
+.companies__eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  color: #6f7bb0;
+  text-transform: uppercase;
+  margin-bottom: 44px;
+}
+
+.companies__eyebrow-arrow {
+  color: #2f6bff;
+}
+
+.companies__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: clamp(24px, 4vw, 64px);
+}
+
+.companies__heading {
+  font-size: clamp(36px, 4.4vw, 56px);
+  font-weight: 800;
+  line-height: 1.06;
+  letter-spacing: -0.02em;
+  margin: 0;
+  max-width: 720px;
+  text-wrap: pretty;
+}
+
+.companies__heading-accent {
+  color: #2f6bff;
+}
+
+.companies__intro {
+  font-size: 17px;
+  line-height: 1.6;
+  color: #b6b6bd;
+  max-width: 440px;
+  margin: 0;
+}
+
+.companies__cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: clamp(20px, 2.2vw, 32px);
+  margin-top: clamp(40px, 4.5vw, 64px);
+}
+
+.companies__card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #1d1d22;
+  border-radius: 22px;
+  overflow: hidden;
+  background: #08080a;
+  transition: border-color 0.25s ease, transform 0.25s ease;
+}
+
+.companies__card:hover {
+  border-color: #2f6bff;
+  transform: translateY(-4px);
+}
+
+.companies__card-visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  height: clamp(180px, 18vw, 230px);
+  padding: 24px;
+}
+
+.companies__card-img {
+  max-width: 72%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.companies__card-body {
+  padding: clamp(20px, 2vw, 28px);
+}
+
+.companies__card-meta {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  color: #2f6bff;
+  text-transform: uppercase;
+}
+
+.companies__card-name {
+  font-size: clamp(21px, 1.8vw, 26px);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.12;
+  margin: 12px 0 0;
+}
+
+.companies__card-description {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #b6b6bd;
+  margin: 12px 0 0;
+}
+
+@media (max-width: 900px) {
+  .companies__head {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .companies__cards {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  }
+}

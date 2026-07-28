@@ -1,0 +1,178 @@
+@import url("https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&display=swap");
+
+.pp {
+  --pp-accent: #2f6bff;
+  --pp-gold: #d9a441;
+  --pp-ink: #0f1418;
+  --pp-font: "Archivo", "Inter", system-ui, sans-serif;
+
+  background: #000;
+  color: #fff;
+  font-family: var(--pp-font);
+  min-width: 320px;
+  overflow-x: clip;
+}
+
+.pp-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+/* ==================================================================== HERO */
+
+.pp-hero {
+  padding: 64px 0 40px;
+  text-align: center;
+}
+
+.pp-kicker {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--pp-accent);
+  margin-bottom: 18px;
+}
+
+.pp-kicker-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--pp-accent);
+  display: inline-block;
+}
+
+.pp-title {
+  font-weight: 900;
+  font-size: clamp(42px, 7vw, 84px);
+  line-height: 0.98;
+  letter-spacing: -0.02em;
+  color: #fff;
+  margin: 0 0 20px;
+}
+
+.pp-lede {
+  font-size: 17px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.6);
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+/* ================================================================= SECTIONS */
+
+.pp-section {
+  padding: 56px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.pp-section:last-of-type {
+  padding-bottom: 100px;
+}
+
+.pp-section__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 28px;
+}
+
+.pp-section__title {
+  font-weight: 800;
+  font-size: clamp(24px, 3vw, 34px);
+  letter-spacing: -0.02em;
+  color: #fff;
+}
+
+.pp-section__count {
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.45);
+  white-space: nowrap;
+}
+
+.pp-masonry {
+  column-count: 4;
+  column-gap: 18px;
+}
+
+.pp-card {
+  position: relative;
+  break-inside: avoid;
+  margin: 0 0 18px;
+  border-radius: 18px;
+  overflow: hidden;
+  background: var(--pp-ink);
+  cursor: pointer;
+}
+
+.pp-card__img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: transform 0.35s ease;
+}
+
+.pp-card:hover .pp-card__img {
+  transform: scale(1.045);
+}
+
+.pp-card__caption {
+  position: absolute;
+  inset: auto 0 0 0;
+  padding: 34px 16px 14px;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.82) 0%,
+    rgba(0, 0, 0, 0.35) 60%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  color: #fff;
+  font-size: 13.5px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.pp-card:hover .pp-card__caption {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ================================================================ RESPONSIVE */
+
+@media (max-width: 1100px) {
+  .pp-masonry {
+    column-count: 3;
+  }
+}
+
+@media (max-width: 760px) {
+  .pp-inner {
+    padding: 0 20px;
+  }
+
+  .pp-masonry {
+    column-count: 2;
+    column-gap: 12px;
+  }
+
+  .pp-card {
+    margin-bottom: 12px;
+    border-radius: 14px;
+  }
+}
+
+@media (max-width: 460px) {
+  .pp-masonry {
+    column-count: 1;
+  }
+}

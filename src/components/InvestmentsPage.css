@@ -1,0 +1,797 @@
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap");
+
+.inv {
+  --inv-bg: #08080a;
+  --inv-panel: #0b0b0f;
+  --inv-ink: #f4f2ee;
+  --inv-accent: #3b6bff;
+  --inv-gold: #c9a24a;
+  --inv-green: #6fce9a;
+  --inv-line: rgba(255, 255, 255, 0.1);
+  --inv-radius: 16px;
+  background: var(--inv-bg);
+  color: var(--inv-ink);
+  font-family: "Instrument Sans", sans-serif;
+  min-width: 320px;
+  overflow-x: clip;
+}
+
+.inv-inner {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+.inv-kicker {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(244, 242, 238, 0.55);
+}
+
+/* shared tag/pill primitives */
+.inv-tag {
+  display: inline-block;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 10.5px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--inv-accent);
+}
+.inv-tag--gold {
+  color: var(--inv-gold);
+}
+
+.inv-pill {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 0.02em;
+  color: rgba(244, 242, 238, 0.82);
+  background: rgba(255, 255, 255, 0.045);
+  border: 1px solid var(--inv-line);
+  padding: 7px 13px;
+  border-radius: 8px;
+  transition: border-color 0.3s, color 0.3s;
+}
+.inv-pill:hover {
+  border-color: var(--inv-accent);
+  color: var(--inv-ink);
+}
+.inv-pill--gold {
+  color: var(--inv-gold);
+  border-color: rgba(201, 162, 74, 0.3);
+  background: rgba(201, 162, 74, 0.07);
+}
+.inv-pill--solid {
+  background: rgba(59, 107, 255, 0.12);
+  border-color: rgba(59, 107, 255, 0.35);
+  color: var(--inv-ink);
+}
+
+/* ============================================================ HERO */
+
+.inv-hero__rail {
+  border-bottom: 1px solid var(--inv-line);
+  padding: 12px 32px;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11.5px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--inv-gold);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.inv-hero__rail-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--inv-green);
+  box-shadow: 0 0 0 4px rgba(111, 206, 154, 0.16);
+}
+
+.inv-hero__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(0, 0.9fr);
+  gap: clamp(28px, 4vw, 64px);
+  align-items: center;
+  padding-top: clamp(44px, 6vw, 92px);
+  padding-bottom: clamp(40px, 5vw, 72px);
+}
+
+.inv-hero__title {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-weight: 700;
+  font-size: clamp(38px, 5.6vw, 82px);
+  line-height: 0.96;
+  letter-spacing: -0.035em;
+  margin: 22px 0 0;
+  text-wrap: balance;
+}
+.inv-hero__title em {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--inv-accent);
+}
+
+.inv-hero__desc {
+  font-size: clamp(15px, 1.25vw, 18px);
+  line-height: 1.62;
+  color: rgba(244, 242, 238, 0.72);
+  margin: clamp(22px, 3vw, 32px) 0 0;
+  max-width: 56ch;
+  text-wrap: pretty;
+}
+
+.inv-hero__keywords {
+  margin-top: clamp(24px, 3vw, 34px);
+  padding-top: 22px;
+  border-top: 1px solid var(--inv-line);
+}
+.inv-hero__keywords p {
+  font-size: 14.5px;
+  line-height: 1.55;
+  color: rgba(244, 242, 238, 0.62);
+  margin: 12px 0 0;
+  max-width: 46ch;
+}
+
+/* fund tearsheet card */
+.inv-tearsheet {
+  border: 1px solid var(--inv-line);
+  border-radius: var(--inv-radius);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.04),
+    rgba(255, 255, 255, 0.01)
+  );
+  padding: 14px;
+  position: relative;
+}
+.inv-tearsheet__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  padding: 4px 6px 14px;
+}
+.inv-tearsheet__ticker {
+  color: var(--inv-accent);
+}
+.inv-tearsheet__since {
+  color: rgba(244, 242, 238, 0.5);
+}
+.inv-tearsheet__media {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  aspect-ratio: 4 / 3;
+}
+.inv-tearsheet__corner {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  pointer-events: none;
+  z-index: 2;
+}
+.inv-tearsheet__corner--tl {
+  top: 10px;
+  left: 10px;
+  border-top: 2px solid rgba(255, 255, 255, 0.7);
+  border-left: 2px solid rgba(255, 255, 255, 0.7);
+}
+.inv-tearsheet__corner--br {
+  bottom: 10px;
+  right: 10px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.7);
+  border-right: 2px solid rgba(255, 255, 255, 0.7);
+}
+.inv-tearsheet__stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: var(--inv-line);
+  border: 1px solid var(--inv-line);
+  border-radius: 12px;
+  overflow: hidden;
+  margin-top: 14px;
+}
+.inv-tearsheet__stat {
+  background: var(--inv-panel);
+  padding: 16px 16px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.inv-tearsheet__stat-n {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-weight: 700;
+  font-size: clamp(26px, 3vw, 38px);
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+}
+.inv-tearsheet__stat-l {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 9.5px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(244, 242, 238, 0.55);
+}
+
+/* ============================================================ TICKER TAPE */
+
+@keyframes inv-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.inv-ticker {
+  border-top: 1px solid var(--inv-line);
+  border-bottom: 1px solid var(--inv-line);
+  overflow: hidden;
+  background: rgba(111, 206, 154, 0.03);
+}
+.inv-ticker__track {
+  display: flex;
+  width: max-content;
+  animation: inv-scroll 38s linear infinite;
+}
+.inv-ticker__group {
+  display: flex;
+}
+.inv-ticker__item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 30px;
+  font-family: "JetBrains Mono", monospace;
+  font-size: clamp(12px, 1.1vw, 15px);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(244, 242, 238, 0.8);
+  white-space: nowrap;
+  border-right: 1px solid var(--inv-line);
+}
+.inv-ticker__mark {
+  color: var(--inv-green);
+  font-size: 0.7em;
+}
+
+/* ============================================================ SECTION HEAD */
+
+.inv-section {
+  margin-top: clamp(72px, 9vw, 132px);
+}
+
+.inv-shead {
+  max-width: 880px;
+  margin-bottom: clamp(40px, 5vw, 64px);
+}
+.inv-shead__num {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(244, 242, 238, 0.55);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.inv-shead__num span {
+  color: var(--inv-accent);
+  font-weight: 500;
+}
+.inv-shead__title {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-weight: 700;
+  font-size: clamp(28px, 3.8vw, 56px);
+  line-height: 1.02;
+  letter-spacing: -0.025em;
+  margin: 18px 0 0;
+  text-wrap: balance;
+}
+.inv-shead__lede {
+  font-size: 16px;
+  line-height: 1.6;
+  color: rgba(244, 242, 238, 0.62);
+  margin: 20px 0 0;
+  text-wrap: pretty;
+}
+
+/* ============================================================ 01 ECOSYSTEM LENS */
+
+.inv-lens {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: var(--inv-line);
+  border: 1px solid var(--inv-line);
+  border-radius: var(--inv-radius);
+  overflow: hidden;
+}
+.inv-lens__cell {
+  position: relative;
+  background: var(--inv-bg);
+  padding: clamp(26px, 2.8vw, 38px) clamp(22px, 2.2vw, 30px) clamp(30px, 3vw, 44px);
+  min-height: clamp(200px, 20vw, 260px);
+  display: flex;
+  flex-direction: column;
+  transition: background 0.35s;
+  overflow: hidden;
+}
+.inv-lens__cell:hover {
+  background: rgba(59, 107, 255, 0.05);
+}
+.inv-lens__idx {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  color: var(--inv-accent);
+}
+.inv-lens__title {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-weight: 600;
+  font-size: clamp(19px, 1.7vw, 25px);
+  letter-spacing: -0.015em;
+  line-height: 1.1;
+  margin: 16px 0 0;
+}
+.inv-lens__desc {
+  font-size: 14px;
+  line-height: 1.55;
+  color: rgba(244, 242, 238, 0.6);
+  margin: 14px 0 0;
+  text-wrap: pretty;
+}
+.inv-lens__rule {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 0;
+  background: var(--inv-accent);
+  transition: width 0.4s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.inv-lens__cell:hover .inv-lens__rule {
+  width: 100%;
+}
+
+/* ============================================================ 02 PORTFOLIO LEDGER */
+
+.inv-ledger {
+  border-top: 1px solid var(--inv-line);
+}
+.inv-ledger__row {
+  padding: clamp(28px, 3.2vw, 44px) 0;
+  border-bottom: 1px solid var(--inv-line);
+}
+.inv-ledger__head {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: start;
+  gap: clamp(16px, 2vw, 28px);
+}
+.inv-ledger__num {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-weight: 800;
+  font-size: clamp(28px, 3vw, 46px);
+  line-height: 1;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.2);
+  letter-spacing: -0.02em;
+}
+.inv-ledger__sector {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-weight: 700;
+  font-size: clamp(22px, 2.6vw, 36px);
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  margin: 0;
+}
+.inv-ledger__desc {
+  font-size: 14.5px;
+  line-height: 1.55;
+  color: rgba(244, 242, 238, 0.6);
+  margin: 10px 0 0;
+  max-width: 58ch;
+}
+.inv-ledger__count {
+  font-family: "JetBrains Mono", monospace;
+  font-size: clamp(20px, 2vw, 30px);
+  color: var(--inv-gold);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  line-height: 1;
+  white-space: nowrap;
+}
+.inv-ledger__count em {
+  font-style: normal;
+  font-size: 9.5px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(244, 242, 238, 0.45);
+  margin-top: 8px;
+}
+.inv-ledger__holdings {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 12px;
+  margin-top: clamp(22px, 2.4vw, 32px);
+}
+.inv-holding {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px 10px 10px;
+  border: 1px solid var(--inv-line);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.02);
+  transition: border-color 0.3s, transform 0.3s, background 0.3s;
+}
+.inv-holding:hover {
+  border-color: var(--inv-accent);
+  transform: translateY(-3px);
+  background: rgba(59, 107, 255, 0.05);
+}
+.inv-holding__logo {
+  flex: 0 0 auto;
+  width: 42px;
+  height: 42px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.inv-holding__name {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 12px;
+  letter-spacing: 0.01em;
+  color: rgba(244, 242, 238, 0.85);
+  line-height: 1.25;
+}
+
+/* ============================================================ 03 FLAGSHIP CAROUSEL */
+
+.inv-flagship__scroller {
+  margin-top: clamp(8px, 1vw, 16px);
+}
+.inv-flagship__track {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 4px clamp(20px, 4vw, 64px) 24px;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+}
+.inv-flagship__track::-webkit-scrollbar {
+  height: 6px;
+}
+.inv-flagship__track::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.18);
+  border-radius: 100px;
+}
+.inv-flag {
+  flex: 0 0 clamp(280px, 30vw, 380px);
+  scroll-snap-align: start;
+  border: 1px solid var(--inv-line);
+  border-radius: var(--inv-radius);
+  overflow: hidden;
+  background: var(--inv-panel);
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.35s, transform 0.35s;
+}
+.inv-flag:hover {
+  border-color: var(--inv-accent);
+  transform: translateY(-5px);
+}
+.inv-flag__media {
+  position: relative;
+  aspect-ratio: 16 / 11;
+  overflow: hidden;
+}
+.inv-flag__no {
+  position: absolute;
+  top: 14px;
+  left: 16px;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  color: var(--inv-ink);
+  background: rgba(8, 8, 10, 0.55);
+  backdrop-filter: blur(4px);
+  padding: 4px 9px;
+  border-radius: 6px;
+  z-index: 2;
+}
+.inv-flag__body {
+  padding: 22px 24px 26px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.inv-flag__tag {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--inv-gold);
+}
+.inv-flag__name {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-weight: 700;
+  font-size: clamp(22px, 2vw, 28px);
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  margin: 12px 0 0;
+}
+.inv-flag__desc {
+  font-size: 14px;
+  line-height: 1.58;
+  color: rgba(244, 242, 238, 0.62);
+  margin: 14px 0 0;
+  text-wrap: pretty;
+}
+.inv-flagship__hint {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(244, 242, 238, 0.4);
+  margin: 0;
+  padding: 0 clamp(20px, 4vw, 64px);
+}
+
+/* ============================================================ 04 SCALE-UP CLUSTERS */
+
+.inv-clusters {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(16px, 2vw, 26px);
+}
+.inv-cluster {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  gap: clamp(20px, 3vw, 44px);
+  align-items: center;
+  border: 1px solid var(--inv-line);
+  border-radius: var(--inv-radius);
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.015);
+  transition: border-color 0.35s;
+}
+.inv-cluster:hover {
+  border-color: rgba(59, 107, 255, 0.4);
+}
+.inv-cluster:nth-child(even) .inv-cluster__media {
+  order: 2;
+}
+.inv-cluster__media {
+  position: relative;
+  aspect-ratio: 5 / 4;
+  overflow: hidden;
+  height: 100%;
+}
+.inv-cluster__idx {
+  position: absolute;
+  top: 16px;
+  right: 18px;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-weight: 800;
+  font-size: clamp(30px, 3vw, 48px);
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.5);
+  z-index: 2;
+}
+.inv-cluster__body {
+  padding: clamp(24px, 2.8vw, 40px) clamp(24px, 2.8vw, 44px) clamp(24px, 2.8vw, 40px) 0;
+}
+.inv-cluster:nth-child(even) .inv-cluster__body {
+  padding: clamp(24px, 2.8vw, 40px) 0 clamp(24px, 2.8vw, 40px) clamp(24px, 2.8vw, 44px);
+}
+.inv-cluster__title {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-weight: 700;
+  font-size: clamp(24px, 2.8vw, 40px);
+  letter-spacing: -0.025em;
+  line-height: 1.03;
+  margin: 14px 0 0;
+}
+.inv-cluster__desc {
+  font-size: 15px;
+  line-height: 1.6;
+  color: rgba(244, 242, 238, 0.64);
+  margin: 16px 0 0;
+  max-width: 56ch;
+  text-wrap: pretty;
+}
+.inv-cluster__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: clamp(22px, 2.6vw, 32px);
+  padding-top: clamp(22px, 2.6vw, 30px);
+  border-top: 1px solid var(--inv-line);
+}
+.inv-cluster__label {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(244, 242, 238, 0.5);
+  display: block;
+  margin-bottom: 12px;
+}
+.inv-cluster__companies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* ============================================================ CTA */
+
+.inv-cta {
+  position: relative;
+  margin-top: clamp(72px, 9vw, 132px);
+  padding: clamp(64px, 9vw, 140px) 0;
+  overflow: hidden;
+}
+.inv-cta__media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.inv-cta__scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    100deg,
+    rgba(8, 8, 10, 0.94) 0%,
+    rgba(8, 8, 10, 0.82) 42%,
+    rgba(8, 8, 10, 0.55) 100%
+  );
+}
+.inv-cta__inner {
+  position: relative;
+  z-index: 1;
+}
+.inv-cta__title {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-weight: 700;
+  font-size: clamp(28px, 4.2vw, 58px);
+  line-height: 1.03;
+  letter-spacing: -0.03em;
+  margin: 18px 0 0;
+  max-width: 20ch;
+  text-wrap: balance;
+}
+.inv-cta__desc {
+  font-size: clamp(15px, 1.3vw, 18px);
+  line-height: 1.62;
+  color: rgba(244, 242, 238, 0.68);
+  margin: 22px 0 0;
+  max-width: 60ch;
+  text-wrap: pretty;
+}
+.inv-cta__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin: 28px 0 0;
+}
+.inv-cta__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin: 34px 0 0;
+}
+.inv-btn {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--inv-ink);
+  padding: 14px 26px;
+  border-radius: 100px;
+  border: 1px solid var(--inv-line);
+  transition: border-color 0.3s, background 0.3s, transform 0.3s;
+}
+.inv-btn:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+.inv-btn--primary {
+  background: var(--inv-accent);
+  border-color: var(--inv-accent);
+  color: #05070f;
+  font-weight: 500;
+}
+.inv-btn--primary:hover {
+  background: #5680ff;
+  border-color: #5680ff;
+}
+
+/* ============================================================ CLOSING */
+
+.inv-closing {
+  border-top: 1px solid var(--inv-line);
+}
+.inv-closing__row {
+  padding: 34px 32px 60px;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11.5px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(244, 242, 238, 0.5);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  align-items: center;
+}
+.inv-closing__name {
+  color: var(--inv-gold);
+}
+
+/* ============================================================ RESPONSIVE */
+
+@media (max-width: 1024px) {
+  .inv-lens {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .inv-cluster,
+  .inv-cluster:nth-child(even) .inv-cluster__media {
+    grid-template-columns: 1fr;
+    order: initial;
+  }
+  .inv-cluster {
+    grid-template-columns: 1fr;
+  }
+  .inv-cluster__body,
+  .inv-cluster:nth-child(even) .inv-cluster__body {
+    padding: clamp(22px, 3vw, 34px);
+  }
+}
+
+@media (max-width: 760px) {
+  .inv-inner {
+    padding: 0 20px;
+  }
+  .inv-hero__rail {
+    padding: 12px 20px;
+    letter-spacing: 0.12em;
+    font-size: 10.5px;
+  }
+  .inv-hero__grid {
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+  .inv-lens {
+    grid-template-columns: 1fr;
+  }
+  .inv-ledger__head {
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+  .inv-ledger__count {
+    grid-column: 2;
+    flex-direction: row;
+    align-items: baseline;
+    gap: 8px;
+    margin-top: 4px;
+  }
+  .inv-ledger__count em {
+    margin-top: 0;
+  }
+  .inv-cluster__grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}

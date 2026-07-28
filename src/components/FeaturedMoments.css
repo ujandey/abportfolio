@@ -1,0 +1,322 @@
+.featured-moments {
+  position: relative;
+  background: #000;
+  color: #fff;
+  padding: 170px 60px 190px;
+  overflow: hidden;
+  font-family: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.featured-moments__glow {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.featured-moments__glow--blue {
+  top: 8%;
+  right: -6%;
+  width: 640px;
+  height: 640px;
+  background: radial-gradient(circle, rgba(47, 107, 255, 0.2), transparent 68%);
+  animation: fm-glow-pulse 7s ease-in-out infinite;
+}
+
+.featured-moments__glow--gold {
+  bottom: -4%;
+  left: -8%;
+  width: 560px;
+  height: 560px;
+  background: radial-gradient(circle, rgba(201, 162, 74, 0.14), transparent 66%);
+}
+
+@keyframes fm-glow-pulse {
+  0%,
+  100% {
+    opacity: 0.55;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.85;
+    transform: scale(1.08);
+  }
+}
+
+.featured-moments__inner {
+  position: relative;
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+.featured-moments__intro {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  margin-bottom: 96px;
+  max-width: 780px;
+}
+
+.featured-moments__eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.32em;
+  color: #8a8a8a;
+  text-transform: uppercase;
+  margin-bottom: 26px;
+}
+
+.featured-moments__eyebrow-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #2f6bff;
+}
+
+.featured-moments__heading {
+  font-family: "Inter Tight", system-ui, sans-serif;
+  font-weight: 600;
+  font-size: 68px;
+  line-height: 1.04;
+  letter-spacing: -0.03em;
+  margin: 0 0 26px;
+}
+
+.featured-moments__lede {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #c4c4c4;
+  max-width: 52ch;
+  margin: 0;
+}
+
+.featured-moments__rows {
+  position: relative;
+}
+
+.featured-moments__grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1.35fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.featured-moments__grid + .featured-moments__grid {
+  margin-top: 40px;
+}
+
+.featured-moments__grid--alt {
+  grid-template-columns: 1fr 1.35fr;
+}
+
+.featured-moments__figure {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+  position: relative;
+  margin: 0;
+  align-self: start;
+}
+
+.featured-moments__grid > .featured-moments__figure:first-child {
+  margin-top: 40px;
+}
+
+.featured-moments__index {
+  position: absolute;
+  top: -78px;
+  font-family: "Inter Tight", system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 150px;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: transparent;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.featured-moments__tilt {
+  position: relative;
+  z-index: 1;
+  border-radius: 16px;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  transform-style: preserve-3d;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s ease;
+  will-change: transform;
+}
+
+.featured-moments__cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.featured-moments__cover--contain {
+  object-fit: contain;
+  background: #0a0a0a;
+}
+
+.featured-moments__scrim {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.featured-moments__scrim--bottom {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 45%, rgba(0, 0, 0, 0.72) 100%);
+}
+
+.featured-moments__scrim--top {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.28) 0%, rgba(0, 0, 0, 0) 22%);
+}
+
+.featured-moments__overlay-text {
+  position: absolute;
+  left: 30px;
+  right: 30px;
+  bottom: 28px;
+  pointer-events: none;
+}
+
+.featured-moments__kicker {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.featured-moments__overlay-title {
+  font-family: "Playfair Display", serif;
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 1.08;
+  letter-spacing: 0.01em;
+}
+
+.featured-moments__badge {
+  position: absolute;
+  top: 22px;
+  left: 22px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 8px 14px;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(6px);
+  border: 1px solid;
+  border-radius: 999px;
+  pointer-events: none;
+}
+
+.featured-moments__badge-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+}
+
+.featured-moments__badge-text {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.featured-moments__caption {
+  display: flex;
+  gap: 18px;
+  margin: 26px 0 0;
+  padding-left: 2px;
+}
+
+.featured-moments__caption-bar {
+  flex: 0 0 auto;
+  width: 2px;
+  align-self: stretch;
+  border-radius: 2px;
+}
+
+.featured-moments__caption-title {
+  font-family: "Playfair Display", serif;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 1.15;
+  margin-bottom: 8px;
+}
+
+.featured-moments__caption-text {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #b7b7b7;
+  max-width: 46ch;
+}
+
+.featured-moments__caption-text strong {
+  color: #fff;
+  font-weight: 600;
+}
+
+@media (max-width: 860px) {
+  .featured-moments {
+    padding: 90px 24px 100px;
+  }
+
+  .featured-moments__heading {
+    font-size: 38px;
+  }
+
+  .featured-moments__grid {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+
+  .featured-moments__grid + .featured-moments__grid {
+    margin-top: 60px;
+  }
+
+  .featured-moments__grid > .featured-moments__figure:first-child {
+    margin-top: 0;
+  }
+
+  .featured-moments__index {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .featured-moments {
+    padding: 64px 20px 72px;
+  }
+
+  .featured-moments__heading {
+    font-size: 28px;
+  }
+
+  .featured-moments__lede {
+    font-size: 16px;
+  }
+
+  .featured-moments__overlay-text {
+    left: 16px;
+    right: 16px;
+    bottom: 18px;
+  }
+
+  .featured-moments__overlay-title {
+    font-size: 22px;
+  }
+
+  .featured-moments__caption-title {
+    font-size: 18px;
+  }
+
+  .featured-moments__caption-text {
+    font-size: 14px;
+  }
+}

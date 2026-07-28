@@ -1,0 +1,26 @@
+.image-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.image-placeholder--contain {
+  background: rgba(255, 255, 255, 0.06) !important;
+}
+
+.image-placeholder__label {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: rgba(255, 255, 255, 0.75);
+  text-align: center;
+  padding: 0 12px;
+}
+
+.image-placeholder--contain .image-placeholder__label {
+  color: rgba(255, 255, 255, 0.45);
+  font-size: 11px;
+}

@@ -1,0 +1,158 @@
+.life-story {
+  background: #000;
+  color: #fff;
+  padding: 90px 60px 60px;
+}
+
+.life-story__header {
+  max-width: 900px;
+  margin: 0 auto 50px;
+  text-align: center;
+}
+
+.life-story__eyebrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  color: #cfcfcf;
+  margin-bottom: 22px;
+}
+
+.life-story__eyebrow-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+}
+
+.life-story__title {
+  font-family: "Playfair Display", serif;
+  font-size: 56px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+  margin-bottom: 18px;
+}
+
+.life-story__subtitle {
+  font-size: 19px;
+  color: #b9b9b9;
+}
+
+.life-story__canvas {
+  height: 700px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  background: #050505;
+}
+
+.milestone-node {
+  width: 260px;
+  padding: 20px 22px;
+  border-radius: 14px;
+  background: #111214;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+}
+
+.milestone-node__year {
+  font-family: "Playfair Display", serif;
+  font-size: 28px;
+  font-weight: 600;
+  color: #2f6bff;
+  margin-bottom: 8px;
+}
+
+.milestone-node__title {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.milestone-node__blurb {
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: #a9a9a9;
+}
+
+.year-node {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #0c0d0f;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 600;
+  color: #8a8a8a;
+  letter-spacing: 0.02em;
+}
+
+.life-story .react-flow__attribution {
+  background: transparent;
+}
+
+.life-story .react-flow__attribution a {
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.life-story .react-flow__controls {
+  box-shadow: none;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.life-story .react-flow__controls-button {
+  background: #111214;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  fill: #fff;
+  stroke: #fff;
+}
+
+.life-story .react-flow__controls-button:hover {
+  background: #1c1d20;
+}
+
+.life-story .react-flow__edge-path {
+  stroke-width: 2;
+}
+
+.life-story .react-flow__handle {
+  opacity: 0;
+  pointer-events: none;
+}
+
+@media (max-width: 700px) {
+  .life-story {
+    padding: 60px 20px 40px;
+  }
+
+  .life-story__title {
+    font-size: clamp(28px, 8vw, 56px);
+  }
+
+  .life-story__subtitle {
+    font-size: 16px;
+  }
+
+  .life-story__canvas {
+    height: 460px;
+  }
+
+  .milestone-node {
+    width: 210px;
+    padding: 16px 18px;
+  }
+
+  .milestone-node__year {
+    font-size: 22px;
+  }
+}

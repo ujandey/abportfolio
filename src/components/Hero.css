@@ -1,0 +1,248 @@
+.hero {
+  padding: 20px 32px 32px;
+  background: #000;
+}
+
+.hero__frame {
+  position: relative;
+  height: calc(100vh - 145px);
+  min-height: 560px;
+  max-height: 720px;
+  border-radius: 24px;
+  overflow: hidden;
+  background: #050b28;
+}
+
+.hero__bg {
+  position: absolute;
+  inset: 0;
+}
+
+.hero__bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: right center;
+  display: block;
+}
+
+.hero__headline {
+  position: absolute;
+  left: 64px;
+  top: 50%;
+  transform: translateY(-50%);
+  max-width: 640px;
+  pointer-events: none;
+  color: #fff;
+}
+
+.hero__headline h1 {
+  font-size: 58px;
+  line-height: 1.12;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  text-wrap: pretty;
+}
+
+.hero__since {
+  font-size: 22px;
+  font-weight: 500;
+  color: #cdd6ff;
+  margin: 26px 0 0;
+}
+
+.hero__cta {
+  position: absolute;
+  left: 64px;
+  bottom: 64px;
+  background: #fff;
+  color: #0b1e6e;
+  font-size: 18px;
+  font-weight: 700;
+  padding: 18px 34px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: background 0.15s ease;
+}
+
+.hero__cta:hover {
+  background: #e2e2e2;
+  color: #0b1e6e;
+}
+
+.hero__cta-chevron {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(-45deg);
+}
+
+.hero__talk {
+  position: absolute;
+  right: 40px;
+  bottom: 40px;
+  width: 260px;
+  pointer-events: none;
+}
+
+.hero__talk-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: #fff;
+}
+
+.hero__talk-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+}
+
+.hero__talk-card {
+  position: relative;
+  height: 150px;
+  border-radius: 12px;
+  overflow: hidden;
+  pointer-events: auto;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+  color: #fff;
+}
+
+.hero__talk-img {
+  position: absolute;
+  inset: 0;
+}
+
+.hero__talk-text {
+  position: absolute;
+  left: 16px;
+  bottom: 14px;
+  pointer-events: none;
+}
+
+.hero__talk-kicker {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+}
+
+.hero__talk-title {
+  font-family: "Playfair Display", serif;
+  font-size: 19px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  line-height: 1.1;
+  margin-top: 4px;
+}
+
+.hero__talk-watch {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(8px);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 9px 15px;
+  border-radius: 999px;
+  transition: background 0.15s ease;
+}
+
+.hero__talk-watch:hover {
+  background: rgba(255, 255, 255, 0.34);
+  color: #fff;
+}
+
+.hero__talk-play {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 8px solid #fff;
+}
+
+@media (max-width: 700px) {
+  .hero {
+    padding: 16px 16px 24px;
+  }
+
+  .hero__frame {
+    height: auto;
+    min-height: 560px;
+    max-height: none;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 90px 20px 20px;
+  }
+
+  .hero__bg {
+    z-index: 0;
+  }
+
+  .hero__headline {
+    position: relative;
+    left: auto;
+    top: auto;
+    right: auto;
+    transform: none;
+    max-width: none;
+    z-index: 1;
+    margin-bottom: 22px;
+  }
+
+  .hero__headline h1 {
+    font-size: clamp(28px, 9vw, 40px);
+  }
+
+  .hero__since {
+    font-size: 15px;
+    margin-top: 16px;
+  }
+
+  .hero__cta {
+    position: relative;
+    left: auto;
+    bottom: auto;
+    z-index: 1;
+    align-self: flex-start;
+    font-size: 15px;
+    padding: 14px 24px;
+    margin-bottom: 24px;
+  }
+
+  .hero__talk {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    width: 100%;
+    max-width: 320px;
+    z-index: 1;
+    pointer-events: auto;
+  }
+}
+
+@media (max-width: 380px) {
+  .hero__headline h1 {
+    font-size: clamp(24px, 9vw, 32px);
+  }
+
+  .hero__cta {
+    font-size: 14px;
+    padding: 12px 20px;
+  }
+}

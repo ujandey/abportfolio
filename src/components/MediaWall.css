@@ -1,0 +1,121 @@
+.media-wall {
+  background: #ffffff;
+  color: #000000;
+  padding: 118px 0 96px;
+}
+
+.media-wall__inner {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.media-wall__title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  margin: 0 0 72px;
+  color: #000000;
+  font-family: Archivo, Inter, system-ui, sans-serif;
+  font-size: clamp(2.3rem, 4vw, 3.35rem);
+  font-weight: 900;
+  letter-spacing: 0;
+  line-height: 0.96;
+  text-align: center;
+}
+
+.media-wall__title-line {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  min-width: 0;
+}
+
+.media-wall__title-highlight {
+  display: inline-flex;
+  align-items: center;
+  background: #000000;
+  color: #ffffff;
+  font-style: italic;
+  line-height: 0.98;
+  padding: 4px 13px 7px;
+}
+
+.media-wall__grid {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 6px 10px;
+}
+
+.media-wall__cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 1 auto;
+  width: clamp(96px, 12vw, var(--logo-width, 160px));
+  height: 76px;
+  padding: 2px;
+}
+
+.media-wall__logo {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+}
+
+.media-wall__cell:hover .media-wall__logo {
+  filter: none;
+  opacity: 1;
+}
+
+.media-wall__footer {
+  max-width: 620px;
+  margin: 72px auto 0;
+  color: #161616;
+  font-family: Inter, system-ui, sans-serif;
+  font-size: clamp(1rem, 1.7vw, 1.35rem);
+  font-weight: 500;
+  letter-spacing: 0.11em;
+  line-height: 1.35;
+  text-align: center;
+}
+
+@media (max-width: 700px) {
+  .media-wall {
+    padding: 78px 0 70px;
+  }
+
+  .media-wall__title {
+    margin-bottom: 48px;
+    font-size: clamp(2rem, 10vw, 2.85rem);
+  }
+
+  .media-wall__title-line {
+    gap: 10px;
+  }
+
+  .media-wall__title-highlight {
+    padding: 3px 10px 6px;
+  }
+
+  .media-wall__grid {
+    gap: 4px 8px;
+  }
+
+  .media-wall__cell {
+    width: clamp(76px, 26vw, var(--logo-width, 160px));
+    height: 54px;
+  }
+
+  .media-wall__footer {
+    margin-top: 52px;
+    font-size: 0.95rem;
+    letter-spacing: 0.08em;
+  }
+}
