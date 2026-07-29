@@ -29,3 +29,10 @@ dist-ssr
 *.MOV
 *.webm
 *.avi
+
+# Blog post artwork - ~40MB, kept out of the repo to keep clones/pushes fast.
+# src/blogImages.js imports from here, so a fresh checkout needs these files
+# copied in separately before it will build.
+# Note: "src/assets/blog/*" (not ".../") so the placeholder can be re-included.
+src/assets/blog/*
+!src/assets/blog/placeholder.svg

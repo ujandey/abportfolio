@@ -34,6 +34,7 @@ import InvestmentsPage from "./components/InvestmentsPage";
 import PressNewsPage from "./components/PressNewsPage";
 import VirtualRealityPage from "./components/VirtualRealityPage";
 import BlogPage from "./components/BlogPage";
+import ContactPage from "./components/ContactPage";
 import "./App.css";
 
 const ACCENT = "#2f6bff";
@@ -93,6 +94,10 @@ function App() {
 
   if (path === "/blog") {
     return <BlogPage />;
+  }
+
+  if (path === "/contact") {
+    return <ContactPage />;
   }
 
   return (

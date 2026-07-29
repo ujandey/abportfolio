@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { navigate } from "../router";
 import Nav from "./Nav";
 import Footer from "./Footer";
 import ImagePlaceholder from "./ImagePlaceholder";
@@ -437,9 +438,11 @@ export default function MentoringPage() {
             </a>
             <a
               className="mtr-btn"
-              href="https://ab-new-alpha.vercel.app/contact"
-              target="_blank"
-              rel="noreferrer"
+              href="/contact"
+              onClick={(e) => {
+                e.preventDefault();
+                navigate("/contact");
+              }}
             >
               Open Contact Page
             </a>
