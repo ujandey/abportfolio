@@ -1,0 +1,157 @@
+/* Full profile section — long-form copy from bioContent.md paired with photos.
+   Deliberately plain: one column of text, one column of image, nothing else. */
+
+.bp__head {
+  margin-bottom: clamp(40px, 5vw, 68px);
+}
+
+.bp__title {
+  font-size: clamp(30px, 4vw, 54px);
+  font-weight: 900;
+  letter-spacing: -0.028em;
+  line-height: 1.04;
+  margin: 0;
+  max-width: 800px;
+}
+
+/* ------------------------------------------------------------- lede */
+
+.bp__lede {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  gap: clamp(28px, 4vw, 56px);
+  align-items: center;
+  padding-bottom: clamp(48px, 6vw, 84px);
+  border-bottom: 1px solid var(--ab-line-d);
+}
+
+.bp__lede-media {
+  margin: 0;
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.bp__lede-media img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.bp__lede-text {
+  margin: 0;
+  font-size: clamp(16px, 1.35vw, 19px);
+  line-height: 1.72;
+  color: rgba(242, 240, 234, 0.86);
+  text-wrap: pretty;
+}
+
+/* ----------------------------------------------------------- blocks */
+
+.bp__block {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+  gap: clamp(28px, 4.5vw, 72px);
+  align-items: start;
+  padding: clamp(48px, 6vw, 84px) 0;
+  border-bottom: 1px solid var(--ab-line-d);
+}
+
+.bp__block:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+/* alternate which side the photograph sits on */
+.bp__block--flip .bp__media {
+  order: 2;
+}
+
+.bp__media {
+  margin: 0;
+  position: sticky;
+  top: 90px;
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.bp__media img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.bp__media:hover img {
+  transform: scale(1.03);
+}
+
+.bp__copy p {
+  margin: 0 0 18px;
+  font-size: 16px;
+  line-height: 1.78;
+  color: rgba(242, 240, 234, 0.82);
+  text-wrap: pretty;
+}
+
+.bp__copy p:last-child {
+  margin-bottom: 0;
+}
+
+.bp__list {
+  list-style: none;
+  margin: 26px 0 0;
+  padding: 0;
+  border-top: 1px solid var(--ab-line-d);
+}
+
+.bp__list li {
+  position: relative;
+  padding: 14px 0 14px 22px;
+  font-size: 15px;
+  line-height: 1.62;
+  color: rgba(242, 240, 234, 0.8);
+  border-bottom: 1px solid var(--ab-line-d);
+}
+
+.bp__list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 23px;
+  width: 8px;
+  height: 1px;
+  background: var(--ab-gold);
+}
+
+/* ------------------------------------------------------- responsive */
+
+@media (max-width: 900px) {
+  .bp__lede,
+  .bp__block {
+    grid-template-columns: 1fr;
+  }
+
+  .bp__block--flip .bp__media {
+    order: 0;
+  }
+
+  .bp__media {
+    position: static;
+  }
+
+  .bp__media img {
+    aspect-ratio: 4 / 3;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bp__media img {
+    transition: none;
+  }
+
+  .bp__media:hover img {
+    transform: none;
+  }
+}

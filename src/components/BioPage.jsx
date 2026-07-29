@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import Nav from "./Nav";
 import Footer from "./Footer";
 import LifeStory from "./LifeStory";
+import BioProfile from "./BioProfile";
 import ImagePlaceholder from "./ImagePlaceholder";
 import heroImg from "../assets/bio/AB.png";
 import deepblueImg from "../assets/hero/deepblue.jpeg";
@@ -525,6 +526,8 @@ export default function BioPage() {
           </div>
         </div>
       </section>
+
+      <BioProfile />
 
       {/* ============================================== CH 03 ORIGIN STORY */}
       <section className="ab-section ab-section--ink ab-origin">
