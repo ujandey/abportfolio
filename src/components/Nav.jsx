@@ -86,14 +86,22 @@ export default function Nav() {
           )
         )}
         <div className="nav__links-mobile-extra">
-          <a href="#" className="nav__cta" onClick={() => setMenuOpen(false)}>
+          <a
+            href="/contact"
+            className="nav__cta"
+            onClick={(e) => go(e, "/contact")}
+          >
             Contact
           </a>
         </div>
       </nav>
 
       <div className="nav__right">
-        <a href="#" className="nav__cta">
+        <a
+          href="/contact"
+          className="nav__cta"
+          onClick={(e) => go(e, "/contact")}
+        >
           Contact
         </a>
       </div>

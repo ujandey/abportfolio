@@ -1,0 +1,606 @@
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap");
+
+.ct {
+  --ct-bg: #08080a;
+  --ct-ink: #f4f2ee;
+  --ct-accent: #3b6bff;
+  --ct-gold: #c9a24a;
+  --ct-bad: #ff6b6b;
+  --ct-line: rgba(255, 255, 255, 0.1);
+  --ct-radius: 16px;
+  background: var(--ct-bg);
+  color: var(--ct-ink);
+  font-family: "Instrument Sans", sans-serif;
+  min-width: 320px;
+  overflow-x: clip;
+}
+
+.ct-inner {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+.ct-kicker {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(244, 242, 238, 0.55);
+}
+
+.ct-tag {
+  display: inline-block;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 10.5px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ct-accent);
+  margin-bottom: 18px;
+}
+
+.ct-tag--gold {
+  color: var(--ct-gold);
+}
+
+/* ============================================================ HERO */
+
+.ct-hero {
+  padding: 140px 0 64px;
+  border-bottom: 1px solid var(--ct-line);
+}
+
+.ct-hero__title {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-weight: 700;
+  font-size: clamp(38px, 6vw, 74px);
+  line-height: 1.03;
+  letter-spacing: -0.03em;
+  margin: 18px 0 0;
+  max-width: 16ch;
+}
+
+.ct-hero__title em {
+  font-style: normal;
+  color: var(--ct-accent);
+}
+
+.ct-hero__desc {
+  margin: 26px 0 0;
+  max-width: 62ch;
+  font-size: 17px;
+  line-height: 1.65;
+  color: rgba(244, 242, 238, 0.68);
+}
+
+/* ============================================================ CHANNELS */
+
+.ct-channels {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: var(--ct-line);
+  border-bottom: 1px solid var(--ct-line);
+  margin-top: 0;
+}
+
+.ct-channel {
+  background: var(--ct-bg);
+  padding: 34px 26px 38px;
+  position: relative;
+}
+
+.ct-channel__idx {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 10.5px;
+  color: rgba(244, 242, 238, 0.32);
+  letter-spacing: 0.12em;
+}
+
+.ct-channel__label {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 10.5px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ct-gold);
+  margin: 14px 0 10px;
+  font-weight: 500;
+}
+
+.ct-channel__value {
+  display: block;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--ct-ink);
+  word-break: break-word;
+  transition: color 0.25s;
+}
+
+a.ct-channel__value:hover {
+  color: var(--ct-accent);
+}
+
+.ct-channel__note {
+  margin: 12px 0 0;
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: rgba(244, 242, 238, 0.5);
+}
+
+/* ============================================================ LAYOUT */
+
+.ct-main {
+  display: grid;
+  grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr);
+  gap: 64px;
+  padding-top: 78px;
+  padding-bottom: 90px;
+  align-items: start;
+}
+
+.ct-shead {
+  margin-bottom: 34px;
+}
+
+.ct-shead__num {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(244, 242, 238, 0.45);
+}
+
+.ct-shead__num span {
+  color: var(--ct-accent);
+  margin-right: 10px;
+}
+
+.ct-shead__title {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-weight: 700;
+  font-size: clamp(26px, 3vw, 38px);
+  line-height: 1.12;
+  letter-spacing: -0.025em;
+  margin-top: 14px;
+}
+
+/* ============================================================ FORM */
+
+.ct-form {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.ct-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+}
+
+.ct-field {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  min-width: 0;
+}
+
+.ct-label {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: rgba(244, 242, 238, 0.62);
+}
+
+.ct-req {
+  color: var(--ct-accent);
+}
+
+.ct-opt {
+  color: rgba(244, 242, 238, 0.3);
+  text-transform: none;
+  letter-spacing: 0.04em;
+}
+
+.ct-input {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid var(--ct-line);
+  border-radius: 10px;
+  padding: 14px 16px;
+  color: var(--ct-ink);
+  font-family: "Instrument Sans", sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+  transition: border-color 0.25s, background 0.25s;
+}
+
+.ct-input::placeholder {
+  color: rgba(244, 242, 238, 0.28);
+}
+
+.ct-input:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.ct-input:focus {
+  outline: none;
+  border-color: var(--ct-accent);
+  background: rgba(59, 107, 255, 0.06);
+}
+
+.ct-input:focus-visible {
+  outline: 2px solid var(--ct-accent);
+  outline-offset: 2px;
+}
+
+.ct-input--bad {
+  border-color: rgba(255, 107, 107, 0.6);
+}
+
+textarea.ct-input {
+  resize: vertical;
+  min-height: 150px;
+}
+
+select.ct-input {
+  appearance: none;
+  cursor: pointer;
+  background-image: linear-gradient(45deg, transparent 50%, rgba(244, 242, 238, 0.5) 50%),
+    linear-gradient(135deg, rgba(244, 242, 238, 0.5) 50%, transparent 50%);
+  background-position: calc(100% - 20px) 22px, calc(100% - 14px) 22px;
+  background-size: 6px 6px, 6px 6px;
+  background-repeat: no-repeat;
+  padding-right: 44px;
+}
+
+select.ct-input option {
+  background: #131317;
+  color: var(--ct-ink);
+}
+
+.ct-err {
+  font-size: 13px;
+  color: var(--ct-bad);
+  line-height: 1.4;
+}
+
+.ct-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+}
+
+.ct-count {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  color: rgba(244, 242, 238, 0.32);
+  margin-left: auto;
+  white-space: nowrap;
+}
+
+/* honeypot — visually gone, still fillable by naive bots */
+.ct-hp {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.ct-consent {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 1.55;
+  color: rgba(244, 242, 238, 0.62);
+}
+
+.ct-consent input {
+  appearance: none;
+  flex: none;
+  width: 18px;
+  height: 18px;
+  margin-top: 1px;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.035);
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.ct-consent input:checked {
+  background: var(--ct-accent);
+  border-color: var(--ct-accent);
+  background-image: linear-gradient(
+      45deg,
+      transparent 45%,
+      #fff 45%,
+      #fff 58%,
+      transparent 58%
+    ),
+    linear-gradient(-45deg, transparent 62%, #fff 62%, #fff 74%, transparent 74%);
+}
+
+.ct-consent input:focus-visible {
+  outline: 2px solid var(--ct-accent);
+  outline-offset: 2px;
+}
+
+.ct-alert {
+  margin: 0;
+  padding: 14px 16px;
+  border: 1px solid rgba(255, 107, 107, 0.4);
+  background: rgba(255, 107, 107, 0.08);
+  border-radius: 10px;
+  font-size: 14px;
+  line-height: 1.55;
+  color: #ffc9c9;
+}
+
+.ct-alert a {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.ct-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 4px;
+}
+
+.ct-btn {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 12px;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--ct-ink);
+  background: transparent;
+  border: 1px solid var(--ct-line);
+  border-radius: 100px;
+  padding: 14px 28px;
+  cursor: pointer;
+  transition: border-color 0.25s, background 0.25s, opacity 0.25s;
+}
+
+.ct-btn:hover {
+  border-color: var(--ct-accent);
+}
+
+.ct-btn--primary {
+  background: var(--ct-accent);
+  border-color: var(--ct-accent);
+}
+
+.ct-btn--primary:hover {
+  background: #2a56d8;
+  border-color: #2a56d8;
+}
+
+.ct-btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.ct-btn:focus-visible {
+  outline: 2px solid var(--ct-ink);
+  outline-offset: 3px;
+}
+
+.ct-routed {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11.5px;
+  color: rgba(244, 242, 238, 0.42);
+}
+
+.ct-routed strong {
+  color: rgba(244, 242, 238, 0.75);
+  font-weight: 500;
+}
+
+/* ============================================================ SUCCESS */
+
+.ct-sent {
+  border: 1px solid rgba(59, 107, 255, 0.35);
+  background: rgba(59, 107, 255, 0.07);
+  border-radius: var(--ct-radius);
+  padding: 46px 38px;
+  text-align: center;
+}
+
+.ct-sent__mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: var(--ct-accent);
+  color: #fff;
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+
+.ct-sent h3 {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.ct-sent p {
+  margin: 12px auto 26px;
+  max-width: 46ch;
+  font-size: 15px;
+  line-height: 1.6;
+  color: rgba(244, 242, 238, 0.68);
+}
+
+/* ============================================================ ASIDE */
+
+.ct-aside {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  position: sticky;
+  top: 100px;
+}
+
+.ct-card {
+  border: 1px solid var(--ct-line);
+  border-radius: var(--ct-radius);
+  background: rgba(255, 255, 255, 0.022);
+  padding: 28px 26px;
+}
+
+.ct-note + .ct-note {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid var(--ct-line);
+}
+
+.ct-note h3 {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.ct-note p {
+  margin: 7px 0 0;
+  font-size: 14px;
+  line-height: 1.6;
+  color: rgba(244, 242, 238, 0.58);
+}
+
+.ct-socials {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.ct-socials li + li {
+  border-top: 1px solid var(--ct-line);
+}
+
+.ct-socials a {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 14px;
+  padding: 13px 0;
+  transition: padding-left 0.25s;
+}
+
+.ct-socials a:hover {
+  padding-left: 8px;
+}
+
+.ct-socials__label {
+  font-size: 14.5px;
+  font-weight: 500;
+}
+
+.ct-socials a:hover .ct-socials__label {
+  color: var(--ct-accent);
+}
+
+.ct-socials__handle {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11.5px;
+  color: rgba(244, 242, 238, 0.4);
+  text-align: right;
+  word-break: break-all;
+}
+
+/* ============================================================ CLOSING */
+
+.ct-closing {
+  border-top: 1px solid var(--ct-line);
+  padding: 26px 0;
+}
+
+.ct-closing__row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 30px;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(244, 242, 238, 0.4);
+}
+
+.ct-closing__name {
+  color: var(--ct-ink);
+}
+
+/* ============================================================ RESPONSIVE */
+
+@media (max-width: 1080px) {
+  .ct-main {
+    grid-template-columns: 1fr;
+    gap: 44px;
+  }
+
+  .ct-aside {
+    position: static;
+  }
+
+  .ct-channels {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 720px) {
+  .ct-inner {
+    padding: 0 20px;
+  }
+
+  .ct-hero {
+    padding: 112px 0 48px;
+  }
+
+  .ct-row {
+    grid-template-columns: 1fr;
+  }
+
+  .ct-channels {
+    grid-template-columns: 1fr;
+  }
+
+  .ct-main {
+    padding-top: 54px;
+    padding-bottom: 64px;
+  }
+
+  .ct-sent {
+    padding: 36px 22px;
+  }
+
+  .ct-actions {
+    gap: 14px;
+  }
+
+  .ct-btn--primary {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ct-input,
+  .ct-btn,
+  .ct-socials a,
+  .ct-channel__value,
+  .ct-consent input {
+    transition: none;
+  }
+}

@@ -102,8 +102,12 @@ export default function Footer() {
             Speaking invitations, mentorship, investments or collaborations
             &mdash; drop a note and it lands straight in my inbox.
           </p>
-          <a className="contact__cta" href={`mailto:${EMAIL}`}>
-            <span>{EMAIL}</span>
+          <a
+            className="contact__cta"
+            href="/contact"
+            onClick={(e) => go(e, "/contact")}
+          >
+            <span>Open the contact page</span>
             <svg viewBox="0 0 24 24" aria-hidden="true">
               <path d="M5 12h13M13 6l6 6-6 6" />
             </svg>
@@ -156,6 +160,9 @@ export default function Footer() {
             ))}
             <div className="footer__col">
               <h3 className="footer__col-title">Contact</h3>
+              <a href="/contact" onClick={(e) => go(e, "/contact")}>
+                Contact Page
+              </a>
               <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
             </div>
           </nav>
