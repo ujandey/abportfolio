@@ -283,6 +283,8 @@ export default function BioPage() {
         </div>
       </section>
 
+      <BioProfile />
+
       {/* ====================================================== POSITIONING */}
       <section className="pos" id="positioning">
         <div className="pos__inner">
@@ -526,8 +528,6 @@ export default function BioPage() {
           </div>
         </div>
       </section>
-
-      <BioProfile />
 
       {/* ============================================== CH 03 ORIGIN STORY */}
       <section className="ab-section ab-section--ink ab-origin">
