@@ -119,7 +119,85 @@ import imgThreeThings from "./assets/blog/three-things.jpg";
 import imgCompetitorGetsFunded from "./assets/blog/Competitor-Gets-Funded.jpg";
 import imgSelfWorth from "./assets/blog/self-worth.jpg";
 
+// Posts the name/title matcher could not place. Rather than leave them on the
+// "artwork coming soon" placeholder, each gets one of the unused pictures of
+// Arijit — picked by hand so no two posts in the grid repeat the same shot.
+import imgSuccess from "./assets/blog/success.jpg";
+import imgArijitLife from "./assets/blog/arijit-life.jpg";
+import imgArijitMedical from "./assets/blog/arijit-medical.png";
+import imgArijitBhattacharyyaPng from "./assets/blog/arijit_bhattacharyya.png";
+import imgPaoloAmba from "./assets/blog/paolo-amba.jpg";
+import imgItc from "./assets/blog/itc.jpg";
+import imgLife from "./assets/blog/life.jpg";
+import imgGiveAway from "./assets/blog/give-away.jpg";
+import imgEntrepInternational from "./assets/blog/entrep-international.png";
+import imgElenaLobova from "./assets/blog/Elena_Lobova.jpg";
+import imgCrypto from "./assets/blog/crypto.png";
+import imgArijitBhattacharyya from "./assets/blog/arijit-bhattacharyya.jpg";
+import imgNENArijit from "./assets/blog/NEN-Arijit.jpg";
+import imgMangaArijit from "./assets/blog/manga-Arijit.jpg";
+import imgRishav from "./assets/blog/Rishav.jpg";
+import imgArijitChina from "./assets/blog/Arijit-Bhattacharya-China.jpg";
+import imgKrishnanagar from "./assets/blog/Krishnanagar.jpg";
+import imgMalbazar from "./assets/blog/malbazar.jpg";
+import imgArijitLifeStory from "./assets/blog/Arijit-life-story.jpg";
+import imgTechnoVR from "./assets/blog/techno_VR.jpg";
+import imgHappyRoom from "./assets/blog/happy-room.jpg";
+import imgArijitXian from "./assets/blog/Arijit-Bhattacharya-xian.jpg";
+import imgFrogRobots from "./assets/blog/3412699.jpg";
+import imgAgartalaCM from "./assets/blog/Agartala-CM.jpg";
+import imgIndie from "./assets/blog/8-indie.jpg";
+import imgPublicSpeaking from "./assets/blog/public-speaking.jpg";
+import imgPublicSpeaker from "./assets/blog/public-speaker.jpg";
+import imgSRMUniversity from "./assets/blog/SRM-University.jpg";
+import imgMumbaiArijit from "./assets/blog/mumbai-arijit-bhattacharyya.png";
+import imgHanuman from "./assets/blog/hanuman.png";
+import imgArijitGym from "./assets/blog/arijit-bhattacharyya-gym.jpg";
+import imgSrijla from "./assets/blog/Srijla.jpg";
+import imgSuperHeros from "./assets/blog/super-heros.jpg";
+import imgTigerLilly from "./assets/blog/tiger-lilly.jpg";
+import imgArijitBhattacharjee from "./assets/blog/Arijit_Bhattacharjee.jpg";
+
 export const archiveImages = {
+  "self-worth-is-not-the-same-as-net-worth": imgSuccess,
+  "year-review-2021": imgArijitLife,
+  "can-an-ai-driven-app-check-if-you-re": imgArijitMedical,
+  "you-will-make-all-major-decisions-after-fundraising-and":
+    imgArijitBhattacharyyaPng,
+  "italy-may-consider-lockdown-of-lombardy-region-in-response": imgPaoloAmba,
+  "is-the-current-slowdown-in-indian-economy-cyclical-or": imgItc,
+  "steps-to-find-your-purpose-when-life-is-crashing": imgLife,
+  "getting-inside-your-buyer-s-head": imgGiveAway,
+  "the-fundamental-lesson-of-the-forces-governing-scaling-startups":
+    imgEntrepInternational,
+  "how-do-we-attract-more-women-in-women-tech": imgElenaLobova,
+  "how-nft-is-disrupting-the-market": imgCrypto,
+  "how-to-be-great-at-failing": imgArijitBhattacharyya,
+  "how-to-become-insanely-well-connected": imgNENArijit,
+  "life-story-bengal-s-first-cosplay-show-entering-into": imgMangaArijit,
+  "life-story-partnership": imgRishav,
+  "life-story-investment-opportunity": imgArijitChina,
+  "life-story-human-trafficking": imgKrishnanagar,
+  "life-story-the-jungle-the-kids-and-the-smile": imgMalbazar,
+  "life-story-one": imgArijitLifeStory,
+  "the-next-decade-in-ai": imgTechnoVR,
+  "how-to-overcome-anger-to-be-better-for-family": imgHappyRoom,
+  "recognizing-and-overcoming-the-fears-that-make-us-settle": imgArijitXian,
+  "scientists-turn-frog-cells-into-tiny-living-robots-that": imgFrogRobots,
+  "serial-entrepreneurs-versus-first-time-entrepreneurs": imgAgartalaCM,
+  "startup-the-team-you-need-if-you-want-to": imgIndie,
+  "the-critical-startup-skills-you-might-be-overlooking-and":
+    imgPublicSpeaking,
+  "the-critical-startup-skills-you-might-be-overlooking": imgPublicSpeaker,
+  "the-modern-business-plan": imgSRMUniversity,
+  "the-resetting-of-the-startup-industry": imgMumbaiArijit,
+  "time-travel-in-mahabharata": imgHanuman,
+  "it-s-time-to-wake-up-and-unfold-the": imgArijitGym,
+  "life-story-the-unknown-woman-2": imgSrijla,
+  "tribes-and-races-who-are-more-developed-than-humans": imgSuperHeros,
+  "what-do-we-learn-from-snake": imgTigerLilly,
+  "what-is-entrepreneurship": imgArijitBhattacharjee,
+
   "25-popular-science-myths-debunked": imgWorldMyth,
   "8-essential-individuals-all-entrepreneurs-must-have-in-their": imgEntrepreneurshipBengali,
   "ai-in-gaming-innovations-changing-the-future-of-gaming": imgAIGaming,
@@ -234,92 +312,22 @@ export const archiveImages = {
   "your-real-work-as-ceo-is-to-infuse-top": imgSelfWorth,
 };
 
-// Posts with no picture yet (35):
-//   self-worth-is-not-the-same-as-net-worth
-//   year-review-2021
-//   can-an-ai-driven-app-check-if-you-re
-//   you-will-make-all-major-decisions-after-fundraising-and
-//   italy-may-consider-lockdown-of-lombardy-region-in-response
-//   is-the-current-slowdown-in-indian-economy-cyclical-or
-//   steps-to-find-your-purpose-when-life-is-crashing
-//   getting-inside-your-buyer-s-head
-//   the-fundamental-lesson-of-the-forces-governing-scaling-startups
-//   how-do-we-attract-more-women-in-women-tech
-//   how-nft-is-disrupting-the-market
-//   how-to-be-great-at-failing
-//   how-to-become-insanely-well-connected
-//   life-story-bengal-s-first-cosplay-show-entering-into
-//   life-story-partnership
-//   life-story-investment-opportunity
-//   life-story-human-trafficking
-//   life-story-the-jungle-the-kids-and-the-smile
-//   life-story-one
-//   the-next-decade-in-ai
-//   how-to-overcome-anger-to-be-better-for-family
-//   recognizing-and-overcoming-the-fears-that-make-us-settle
-//   scientists-turn-frog-cells-into-tiny-living-robots-that
-//   serial-entrepreneurs-versus-first-time-entrepreneurs
-//   startup-the-team-you-need-if-you-want-to
-//   the-critical-startup-skills-you-might-be-overlooking-and
-//   the-critical-startup-skills-you-might-be-overlooking
-//   the-modern-business-plan
-//   the-resetting-of-the-startup-industry
-//   time-travel-in-mahabharata
-//   it-s-time-to-wake-up-and-unfold-the
-//   life-story-the-unknown-woman-2
-//   tribes-and-races-who-are-more-developed-than-humans
-//   what-do-we-learn-from-snake
-//   what-is-entrepreneurship
+// Every archive post now has artwork.
 
-// Pictures not used by any post (51):
+// Pictures not used by any post (16):
 //   1.jpg
 //   2.jpg
-//   3412699.jpg
-//   8-indie.jpg
-//   Agartala-CM.jpg
-//   Arijit-Bhattacharya-China.jpg
-//   Arijit-Bhattacharya-xian.jpg
-//   arijit-bhattacharyya-gym.jpg
-//   arijit-bhattacharyya.jpg
-//   Arijit-life-story.jpg
-//   arijit-life.jpg
-//   arijit-medical.png
-//   Arijit_Bhattacharjee.jpg
-//   arijit_bhattacharyya.png
 //   augmented-reality-glass.png
-//   crypto.png
-//   Elena_Lobova.jpg
-//   entrep-international.png
 //   food.jpg
-//   give-away.jpg
 //   gym-arijit.jpg
-//   hanuman.png
-//   happy-room.jpg
-//   itc.jpg
 //   Japan.jpg
 //   Jenny.png
-//   Krishnanagar.jpg
 //   leadership.jpg
-//   life.jpg
-//   malbazar.jpg
-//   manga-Arijit.jpg
 //   metaverse.jpg
 //   mixed-reality.png
-//   mumbai-arijit-bhattacharyya.png
-//   NEN-Arijit.jpg
-//   paolo-amba.jpg
-//   public-speaker.jpg
-//   public-speaking.jpg
-//   Rishav.jpg
 //   saltlake.jpg
-//   Srijla.jpg
-//   SRM-University.jpg
-//   success.jpg
-//   super-heros.jpg
 //   superhero.jpg
 //   teacher.png
-//   techno_VR.jpg
-//   tiger-lilly.jpg
 //   tinni-bhattacharyya.png
 //   trust.jpg
 //   we-are.jpg

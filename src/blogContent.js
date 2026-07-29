@@ -7,7 +7,12 @@
 
 import { blogArchivePosts } from "./blogArchiveContent";
 import { archiveImages } from "./blogImages";
-import placeholderImg from "./assets/blog/placeholder.svg";
+import fallbackJapan from "./assets/blog/Japan.jpg";
+import fallbackGym from "./assets/blog/gym-arijit.jpg";
+import fallbackSaltlake from "./assets/blog/saltlake.jpg";
+import fallbackTeacher from "./assets/blog/teacher.png";
+import fallbackWeAre from "./assets/blog/we-are.jpg";
+import fallbackLeadership from "./assets/blog/leadership.jpg";
 
 import leadershipTech from "./assets/blog/leadership-tech.jpg";
 import raisingCapital from "./assets/blog/Raising-a-lot-of-capital.jpg";
@@ -403,12 +408,23 @@ const curatedPosts = [
 ];
 
 // Archive posts keep their artwork in a separate map so the generated text file
-// stays regenerable. Anything still unmatched falls back to the placeholder, so
-// the grid stays even; add the post to blogImages.js to replace it.
+// stays regenerable. Every post is mapped today; should a new one arrive without
+// artwork it cycles through these spare photos rather than rendering blank —
+// add it to blogImages.js to give it its own picture.
+const fallbackImages = [
+  fallbackJapan,
+  fallbackGym,
+  fallbackSaltlake,
+  fallbackTeacher,
+  fallbackWeAre,
+  fallbackLeadership,
+];
+
 export const blogPosts = [
   ...curatedPosts,
-  ...blogArchivePosts.map((post) => ({
+  ...blogArchivePosts.map((post, index) => ({
     ...post,
-    image: archiveImages[post.id] || placeholderImg,
+    image:
+      archiveImages[post.id] || fallbackImages[index % fallbackImages.length],
   })),
 ];
