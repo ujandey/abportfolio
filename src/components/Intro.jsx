@@ -127,6 +127,15 @@ export default function Intro() {
       </div>
 
       <div className="intro__block">
+        <h3 className="intro__block-title">Advisory &amp; Global Roles</h3>
+        <ul className="intro__roles">
+          {ROLES.map((r) => (
+            <li key={r}>{r}</li>
+          ))}
+        </ul>
+      </div>
+
+      <div className="intro__block">
         <h3 className="intro__block-title">Ventures &amp; Companies</h3>
         <div className="intro__ventures">
           {VENTURES.map((v) => (
@@ -139,15 +148,6 @@ export default function Intro() {
             </div>
           ))}
         </div>
-      </div>
-
-      <div className="intro__block">
-        <h3 className="intro__block-title">Advisory &amp; Global Roles</h3>
-        <ul className="intro__roles">
-          {ROLES.map((r) => (
-            <li key={r}>{r}</li>
-          ))}
-        </ul>
       </div>
 
       <p className="intro__speaking">
