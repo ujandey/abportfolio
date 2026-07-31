@@ -36,3 +36,5 @@ dist-ssr
 # Note: "src/assets/blog/*" (not ".../") so the placeholder can be re-included.
 src/assets/blog/*
 !src/assets/blog/placeholder.svg
+# Press news image archive - kept local and supplied outside Git.
+src/assets/Pressnews/

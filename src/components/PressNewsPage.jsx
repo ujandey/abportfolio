@@ -23,6 +23,33 @@ import {
 } from "../pressNewsContent";
 import "./PressNewsPage.css";
 
+const pressImagesById = {
+  "pn-hero-cnbc": new URL("../assets/Pressnews/cnbc.jpg", import.meta.url).href,
+  "pn-feat-cnbc": new URL("../assets/Pressnews/cnbc_arijit.jpg", import.meta.url).href,
+  "pn-clip-et": new URL("../assets/Pressnews/2018/economic-times.jpg", import.meta.url).href,
+  "pn-clip-hindu": new URL("../assets/Pressnews/2019/the-hindu.png", import.meta.url).href,
+  "pn-clip-ht": new URL("../assets/Pressnews/hindusthantimes.jpg", import.meta.url).href,
+  "pn-clip-toi": new URL("../assets/Pressnews/2024/timesofindia-B.jpg", import.meta.url).href,
+  "pn-clip-techsauce": new URL("../assets/Pressnews/2018/tech-sauce.jpg", import.meta.url).href,
+  "pn-clip-telegraph": new URL("../assets/Pressnews/kolkata-businessman.jpg", import.meta.url).href,
+  "pn-clip-magazine": new URL("../assets/Pressnews/2021/magazine-news.jpg", import.meta.url).href,
+  "pn-tv-nepal": new URL("../assets/Pressnews/Nepal_TV_Arijit-Bhattacharyya.png", import.meta.url).href,
+  "pn-tv-tedx": new URL("../assets/Pressnews/2019/tedx.jpg", import.meta.url).href,
+  "pn-tv-ddbangla": new URL("../assets/Pressnews/2019/DD-Bangla.jpg", import.meta.url).href,
+  "pn-tv-joshtalks": new URL("../assets/Pressnews/2018/Josh-Talk_Bengali.jpg", import.meta.url).href,
+  "pn-tv-tv9": new URL("../assets/Pressnews/2022/TV9.jpg", import.meta.url).href,
+  "pn-tv-jharkhand": new URL("../assets/Pressnews/Jharkhand_IAS.jpg", import.meta.url).href,
+  "pn-world-china-blockchain": new URL("../assets/Pressnews/2020/China-blockchain.jpg", import.meta.url).href,
+  "pn-world-china-film": new URL("../assets/Pressnews/China_film_fest.jpg", import.meta.url).href,
+  "pn-world-finland": new URL("../assets/Pressnews/2018/Finland_India.jpg", import.meta.url).href,
+  "pn-world-dubai": new URL("../assets/Pressnews/arabia.jpg", import.meta.url).href,
+  "pn-tech-arvr": new URL("../assets/Pressnews/arijit_bhattacharyya-virtualreality.jpg", import.meta.url).href,
+  "pn-tech-globalvr": new URL("../assets/Pressnews/virtual_reality_India.jpg", import.meta.url).href,
+  "pn-tech-advisory": new URL("../assets/Pressnews/technology_adviser.jpg", import.meta.url).href,
+  "pn-tech-summit": new URL("../assets/Pressnews/startup_summit.jpg", import.meta.url).href,
+  "pn-connect-banner": new URL("../assets/Pressnews/Arijit_Bhattacharyya1.png", import.meta.url).href,
+};
+
 export default function PressNewsPage() {
   const [filter, setFilter] = useState("All");
 
@@ -85,7 +112,7 @@ export default function PressNewsPage() {
                 <span className="pn-broadcast__tc">{heroBroadcast.timecode}</span>
               </div>
               <div className="pn-broadcast__screen">
-                <ImagePlaceholder
+                <PressImage
                   id={heroBroadcast.id}
                   label={heroBroadcast.caption}
                 />
@@ -157,7 +184,7 @@ export default function PressNewsPage() {
         <div className="pn-front">
           <article className="pn-lead">
             <div className="pn-lead__media">
-              <ImagePlaceholder
+              <PressImage
                 id={featuredLead.id}
                 label={`${featuredLead.title} — broadcast still`}
               />
@@ -207,7 +234,7 @@ export default function PressNewsPage() {
               >
                 <span className="pn-clip__tape" />
                 <div className="pn-clip__media">
-                  <ImagePlaceholder id={c.id} label={`${c.source} clipping`} />
+                  <PressImage id={c.id} label={`${c.source} clipping`} />
                 </div>
                 <figcaption className="pn-clip__cap">
                   <span className="pn-byline">{c.source}</span>
@@ -286,7 +313,7 @@ export default function PressNewsPage() {
             {broadcasts.map((b) => (
               <article className="pn-monitor" key={b.id}>
                 <div className="pn-monitor__screen">
-                  <ImagePlaceholder id={b.id} label={`${b.channel} — ${b.title}`} />
+                  <PressImage id={b.id} label={`${b.channel} — ${b.title}`} />
                   <span className="pn-monitor__scan" aria-hidden="true" />
                   <span
                     className={`pn-monitor__status${
@@ -297,11 +324,6 @@ export default function PressNewsPage() {
                     {b.live ? "Live" : "Rec"}
                   </span>
                   <span className="pn-monitor__ch">{b.channel}</span>
-                  <span className="pn-monitor__play" aria-hidden="true">
-                    <svg viewBox="0 0 24 24" width="22" height="22">
-                      <path d="M8 5v14l11-7z" fill="currentColor" />
-                    </svg>
-                  </span>
                 </div>
                 <div className="pn-monitor__meta">
                   <span className="pn-byline">{b.label}</span>
@@ -327,7 +349,7 @@ export default function PressNewsPage() {
             <article className="pn-desk" key={w.id}>
               <span className="pn-desk__country">{w.country}</span>
               <div className="pn-desk__media">
-                <ImagePlaceholder id={w.id} label={`${w.country} — ${w.title}`} />
+                <PressImage id={w.id} label={`${w.country} — ${w.title}`} />
                 <span className="pn-desk__reticle pn-desk__reticle--tl" />
                 <span className="pn-desk__reticle pn-desk__reticle--br" />
               </div>
@@ -407,7 +429,7 @@ export default function PressNewsPage() {
             {techArchive.map((t, i) => (
               <article className="pn-sig" key={t.id}>
                 <div className="pn-sig__media">
-                  <ImagePlaceholder id={t.id} label={t.title} />
+                  <PressImage id={t.id} label={t.title} />
                   <span className="pn-sig__reticle" />
                   <span className="pn-sig__idx">
                     {String(i + 1).padStart(2, "0")}
@@ -425,7 +447,7 @@ export default function PressNewsPage() {
       {/* ───────────────────────────── CTA / NEWSROOM DESK */}
       <section className="pn-connect">
         <div className="pn-connect__media">
-          <ImagePlaceholder
+          <PressImage
             id="pn-connect-banner"
             label="Arijit Bhattacharyya — press, mentoring & global ecosystem work"
           />
@@ -488,6 +510,33 @@ export default function PressNewsPage() {
   );
 }
 
+function PressImage({ id, label, shape, fit, className = "", style }) {
+  const src = pressImagesById[id];
+
+  if (!src) {
+    return (
+      <ImagePlaceholder
+        id={id}
+        label={label}
+        shape={shape}
+        fit={fit}
+        className={className}
+        style={style}
+      />
+    );
+  }
+
+  return (
+    <img
+      className={`pn-img ${className}`.trim()}
+      src={src}
+      alt={label || "Press news image"}
+      loading={id === "pn-hero-cnbc" ? "eager" : "lazy"}
+      decoding="async"
+      style={style}
+    />
+  );
+}
 function SectionHead({ num, kicker, title, lede, light }) {
   return (
     <div className={`pn-shead${light ? " pn-shead--light" : ""}`}>
@@ -502,3 +551,4 @@ function SectionHead({ num, kicker, title, lede, light }) {
     </div>
   );
 }
+
