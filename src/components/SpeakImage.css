@@ -1,11 +1,33 @@
+.ls-img-frame {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #0d0d10;
+}
+
+/* Blurred, dimmed copy of the photo so the letterboxed edges read as part of
+   the frame instead of dead space. Inset past the edges to hide the blur rim. */
+.ls-img-frame__bg {
+  position: absolute;
+  inset: -8%;
+  background-size: cover;
+  background-position: center;
+  filter: blur(26px) saturate(0.75) brightness(0.5);
+}
+
 .ls-img {
+  position: relative;
+  z-index: 1;
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
+  object-position: center;
 }
 
-.ls-img--contain {
-  object-fit: contain;
-  background: rgba(255, 255, 255, 0.06);
+/* Opt-in for art already shaped like its frame. */
+.ls-img--cover {
+  object-fit: cover;
+  object-position: center 30%;
 }
