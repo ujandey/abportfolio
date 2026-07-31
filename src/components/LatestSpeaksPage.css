@@ -253,8 +253,17 @@
   overflow: hidden;
 }
 
+.ls-feature-media::after {
+  content: "";
+  position: absolute;
+  inset: 40% 0 0;
+  background: linear-gradient(180deg, transparent, rgba(8, 8, 10, 0.85));
+  pointer-events: none;
+}
+
 .ls-feature-media__foot {
   position: absolute;
+  z-index: 1;
   left: 24px;
   right: 24px;
   bottom: 22px;
