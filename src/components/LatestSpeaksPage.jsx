@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import Nav from "./Nav";
 import Footer from "./Footer";
-import ImagePlaceholder from "./ImagePlaceholder";
+import SpeakImage from "./SpeakImage";
 import SpeakCard from "./SpeakCard";
 import {
   speakerRoles,
@@ -86,7 +86,7 @@ export default function LatestSpeaksPage() {
 
       {/* FULL-BLEED HERO IMAGE */}
       <section className="ls-hero-media">
-        <ImagePlaceholder id="ls-hero-media" label="Speaker at Arijit Bhattacharyya — global keynote speaker & panelist on stage" />
+        <SpeakImage id="ls-hero-media" label="Speaker at Arijit Bhattacharyya — global keynote speaker & panelist on stage" />
         <div className="ls-hero-media__scrim" />
         <div className="ls-hero-media__foot">
           <div>
@@ -119,7 +119,7 @@ export default function LatestSpeaksPage() {
       {/* FEATURE IMAGE */}
       <section className="ls-inner">
         <div className="ls-feature-media">
-          <ImagePlaceholder id="ls-feature-media" label="Dubai AI Blockchain investment forum" />
+          <SpeakImage id="ls-feature-media" label="Dubai AI Blockchain investment forum" />
           <div className="ls-feature-media__foot">
             <div className="ls-feature-media__kicker">Dubai • AI • Blockchain • Investment</div>
             <div className="ls-feature-media__desc">
@@ -178,7 +178,7 @@ export default function LatestSpeaksPage() {
 
         <a href="#" className="ls-thought-feature">
           <div className="ls-thought-feature__media">
-            <ImagePlaceholder id={thoughtLeadershipFeatured.img} label={thoughtLeadershipFeatured.img} />
+            <SpeakImage id={thoughtLeadershipFeatured.img} label={thoughtLeadershipFeatured.img} />
           </div>
           <div className="ls-thought-feature__body">
             <div className="ls-thought-feature__tags">
@@ -236,7 +236,7 @@ export default function LatestSpeaksPage() {
           {institutionalHighlights.map((c) => (
             <a href="#" className="ls-institutional__row" key={c.t}>
               <div className="ls-institutional__media">
-                <ImagePlaceholder id={c.img} label={c.img} />
+                <SpeakImage id={c.img} label={c.img} />
               </div>
               <div>
                 <div className="ls-institutional__tag">{c.tag}</div>
@@ -341,7 +341,7 @@ export default function LatestSpeaksPage() {
           {speakingJourney.map((c) => (
             <a href="#" className="ls-journey-card" key={c.t}>
               <div className="ls-journey-card__media">
-                <ImagePlaceholder id={c.img} label={c.img} />
+                <SpeakImage id={c.img} label={c.img} />
               </div>
               <div className="ls-journey-card__body">
                 <div className="ls-journey-card__loc">{c.loc}</div>

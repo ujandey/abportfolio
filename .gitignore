@@ -38,3 +38,7 @@ src/assets/blog/*
 !src/assets/blog/placeholder.svg
 # Press news image archive - kept local and supplied outside Git.
 src/assets/Pressnews/
+# Latest Speaks event photos - kept local and supplied outside Git.
+# src/components/SpeakImage.jsx references these, so a fresh checkout needs
+# them copied in separately before it will build.
+src/assets/latest-speaks/

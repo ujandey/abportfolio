@@ -1,11 +1,11 @@
-import ImagePlaceholder from "./ImagePlaceholder";
+import SpeakImage from "./SpeakImage";
 import "./SpeakCard.css";
 
 export default function SpeakCard({ img, cat, title, sub, desc, tags }) {
   return (
     <a href="#" className="sc-card">
       <div className="sc-card__media">
-        <ImagePlaceholder id={img || title} label={img} />
+        <SpeakImage id={img || title} label={img} />
       </div>
       <div className="sc-card__body">
         {cat && <div className="sc-card__cat">{cat}</div>}
