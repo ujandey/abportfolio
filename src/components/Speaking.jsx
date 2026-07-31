@@ -1,6 +1,27 @@
 import ImagePlaceholder from "./ImagePlaceholder";
 import { speakingGroups } from "../data";
+import { speakingImageFor } from "../speakingImages";
 import "./Speaking.css";
+
+function SlotBackground({ slot }) {
+  const src = speakingImageFor(slot.slotId);
+
+  if (!src) {
+    return (
+      <ImagePlaceholder
+        id={slot.slotId}
+        label={slot.photoNote}
+        className="speaking__card-img"
+      />
+    );
+  }
+
+  return (
+    <div className="speaking__card-img">
+      <img src={src} alt={slot.photoNote} loading="lazy" decoding="async" />
+    </div>
+  );
+}
 
 export default function Speaking() {
   return (
@@ -47,11 +68,7 @@ export default function Speaking() {
                   href="#"
                   className="speaking__card"
                 >
-                  <ImagePlaceholder
-                    id={slot.slotId}
-                    label={slot.photoNote}
-                    className="speaking__card-img"
-                  />
+                  <SlotBackground slot={slot} />
                   <div className="speaking__card-scrim" />
 
                   <div className="speaking__card-top">
