@@ -377,6 +377,65 @@ export const institutionalNetwork = [
   },
 ];
 
+/* Educational qualification — degrees, certifications and creative training.
+   Same source as the "Educational Qualification" block in legacyArchive. */
+export const educationLede =
+  "Arijit Bhattacharyya started one of India's first game development companies at 17, while still an undergraduate — and kept studying alongside building it. The formal record runs from economics, statistics and mathematics into computer applications, financial management and doctoral-level computer science research, layered with platform certifications and creative-technology diplomas.";
+
+export const educationGroups = [
+  {
+    title: "Academic Degrees",
+    desc: "Formal education across computer science, computer applications, financial management, economics, statistics and mathematics.",
+    items: [
+      {
+        credential: "PhD",
+        title: "Computer Science",
+        note: "Computer science and deep technology research profile.",
+      },
+      {
+        credential: "MBA",
+        title: "Financial Management",
+        note: "The finance foundation behind the investment, digital banking and MSME advisory work.",
+      },
+      {
+        credential: "MCA",
+        title: "Master in Computer Application",
+        note: "Studied while creating several 2D and 3D games from his own Kolkata-based company.",
+      },
+      {
+        credential: "BSc",
+        title: "Economics, Statistics & Mathematics",
+        note: "The graduation years during which Virtualinfocom was started, at 17, in 1998.",
+      },
+    ],
+  },
+  {
+    title: "Professional Certifications",
+    desc: "Platform, engineering and management certifications earned alongside the founder journey.",
+    items: [
+      { credential: "MCSE", title: "Microsoft Certified Systems Engineer" },
+      { credential: "MCSD", title: "Microsoft Certified Solution Developer" },
+      { credential: "SCJP", title: "Sun Certified Java Programmer" },
+      { credential: "BCSA", title: "BCSA Certification" },
+      {
+        credential: "Green Belt",
+        title: "Working Capital Management",
+        note: "Diploma and Green Belt in Working Capital Management.",
+      },
+    ],
+  },
+  {
+    title: "Creative & Technical Training",
+    desc: "The animation, game and simulation training that sits underneath the creative-technology work.",
+    items: [
+      { credential: "Diploma", title: "Animation & Graphic Design" },
+      { credential: "Diploma", title: "3D Animation" },
+      { credential: "Diploma", title: "Game Development" },
+      { credential: "Background", title: "Simulation Engineering" },
+    ],
+  },
+];
+
 export const architecturePillars = [
   { title: "Technology & DeepTech", lead: "Where imagination meets emerging technology.", body: "AI, games, VR, AR, XR, blockchain and deep technology have remained central to the innovation journey — not as isolated skills, but as engines for building products, platforms, smart-city solutions, digital humans and future-facing experiences.", tags: "AI • Gaming • VR / AR / XR • Blockchain • DeepTech" },
   { title: "Entrepreneurship & Investment", lead: "Building founders, not just companies.", body: "Founder mentoring, venture ecosystems, investor conversations, business matchmaking and growth strategy sit at the center of Arijit's work with startups, institutions, SMEs, MSMEs and global business networks.", tags: "Mentoring • Investors • Startups • Growth • Funding" },

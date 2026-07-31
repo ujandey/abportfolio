@@ -30,6 +30,8 @@ import {
   positionsOfInfluence,
   globalFootprint,
   institutionalNetwork,
+  educationLede,
+  educationGroups,
   architecturePillars,
   founderVentureNetwork,
   originStoryTags,
@@ -82,7 +84,7 @@ function ChapterHead({ index, label, title, intro, children, wide }) {
   return (
     <header className="ab-head" data-reveal>
       <div className="ab-head__meta">
-        <span className="ab-head__index">{index}</span>
+        {index && <span className="ab-head__index">{index}</span>}
         <span className="ab-head__tick" aria-hidden="true" />
         <span className="ab-head__label">{label}</span>
       </div>
@@ -565,6 +567,45 @@ export default function BioPage() {
                 </div>
               ))}
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ============================================ EDUCATIONAL QUALIFICATION */}
+      <section className="ab-section ab-section--paper ab-edu-section" id="education">
+        <div className="ab-inner">
+          <ChapterHead
+            label="Educational Qualification"
+            title="Degrees, certifications and the training behind the work."
+            intro={educationLede}
+          />
+          <div className="ab-edu-grid">
+            {educationGroups.map((group, i) => (
+              <div
+                className="ab-edu"
+                key={group.title}
+                data-reveal
+                style={{ "--d": `${i * 70}ms` }}
+              >
+                <div className="ab-edu__head">
+                  <h3>{group.title}</h3>
+                  <p>{group.desc}</p>
+                </div>
+                <ul className="ab-edu__list">
+                  {group.items.map((item) => (
+                    <li className="ab-edu__item" key={item.title}>
+                      <span className="ab-edu__credential">{item.credential}</span>
+                      <span className="ab-edu__body">
+                        <span className="ab-edu__title">{item.title}</span>
+                        {item.note && (
+                          <span className="ab-edu__note">{item.note}</span>
+                        )}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
         </div>
       </section>
