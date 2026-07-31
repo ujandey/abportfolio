@@ -138,7 +138,9 @@
   width: 100%;
   position: relative;
   margin-top: clamp(30px, 4vw, 52px);
-  height: clamp(400px, 68vh, 760px);
+  /* Sized to the source photos (~280x314) so the full-bleed banner does not
+     have to upscale them past legibility. */
+  height: clamp(340px, 52vh, 560px);
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   overflow: hidden;

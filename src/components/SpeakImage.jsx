@@ -68,14 +68,27 @@ export default function SpeakImage({ id, label, shape, fit, className = "", styl
     );
   }
 
+  // The source photos are small portrait thumbnails (mostly 280x314) while every
+  // frame here is landscape, so `cover` would slice off heads and poster titles.
+  // The image is letterboxed instead, over a blurred copy of itself that fills
+  // the frame.
   return (
-    <img
-      className={`ls-img${fit === "contain" ? " ls-img--contain" : ""} ${className}`.trim()}
-      src={src}
-      alt={label || "Arijit Bhattacharyya speaking"}
-      loading={id === "ls-hero-media" ? "eager" : "lazy"}
-      decoding="async"
+    <div
+      className={`ls-img-frame ${className}`.trim()}
       style={{ borderRadius: shape === "circle" ? "50%" : undefined, ...style }}
-    />
+    >
+      <span
+        className="ls-img-frame__bg"
+        style={{ backgroundImage: `url("${src}")` }}
+        aria-hidden="true"
+      />
+      <img
+        className={`ls-img${fit === "cover" ? " ls-img--cover" : ""}`}
+        src={src}
+        alt={label || "Arijit Bhattacharyya speaking"}
+        loading={id === "ls-hero-media" ? "eager" : "lazy"}
+        decoding="async"
+      />
+    </div>
   );
 }
