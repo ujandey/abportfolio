@@ -4,7 +4,7 @@ import "./SpeakImage.css";
 // Keys match the `img` / `id` values used across latestSpeaksContent.js and
 // LatestSpeaksPage.jsx. Anything without an entry falls back to the gradient
 // placeholder.
-export const speakImagesById = {
+const speakImagesById = {
   "ls-hero-media": new URL("../assets/latest-speaks/chitkara.png", import.meta.url).href,
   "ls-feature-media": new URL("../assets/latest-speaks/2022/Dubai.jpg", import.meta.url).href,
 

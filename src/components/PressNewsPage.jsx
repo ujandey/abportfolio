@@ -21,6 +21,7 @@ import {
   connectDesks,
   connectChips,
 } from "../pressNewsContent";
+import { pressArchive } from "../pressArchiveContent";
 import "./PressNewsPage.css";
 
 const pressImagesById = {
@@ -240,6 +241,21 @@ export default function PressNewsPage() {
                   <span className="pn-byline">{c.source}</span>
                   <h4 className="pn-clip__title">{c.title}</h4>
                   <p className="pn-clip__dek">{c.dek}</p>
+                </figcaption>
+              </figure>
+            ))}
+            {pressArchive.map((c, i) => (
+              <figure
+                className="pn-clip pn-clip--plain"
+                key={`${c.img}-${i}`}
+                style={{ "--tilt": `${c.tilt}deg` }}
+              >
+                <span className="pn-clip__tape" />
+                <div className="pn-clip__media">
+                  <PressImage id={c.img} label={c.t} />
+                </div>
+                <figcaption className="pn-clip__cap">
+                  <h4 className="pn-clip__title">{c.t}</h4>
                 </figcaption>
               </figure>
             ))}
@@ -510,8 +526,21 @@ export default function PressNewsPage() {
   );
 }
 
+// The archive cards reference their file by path ("Pressnews/2019/tedx.jpg")
+// rather than getting an entry each in the map above. A missing folder yields
+// an empty map, which degrades to placeholders instead of breaking the build.
+const pressFiles = import.meta.glob("../assets/Pressnews/**/*.{jpg,jpeg,png,webp}", {
+  eager: true,
+  query: "?url",
+  import: "default",
+});
+
+const pressImagesByPath = Object.fromEntries(
+  Object.entries(pressFiles).map(([path, url]) => [path.replace("../assets/", ""), url]),
+);
+
 function PressImage({ id, label, shape, fit, className = "", style }) {
-  const src = pressImagesById[id];
+  const src = pressImagesById[id] || pressImagesByPath[id];
 
   if (!src) {
     return (
