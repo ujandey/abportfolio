@@ -420,6 +420,7 @@ const fallbackImages = [
   fallbackLeadership,
 ];
 
+// Every post gets its own page at /blog/<slug>; ids are already unique slugs.
 export const blogPosts = [
   ...curatedPosts,
   ...blogArchivePosts.map((post, index) => ({
@@ -427,4 +428,18 @@ export const blogPosts = [
     image:
       archiveImages[post.id] || fallbackImages[index % fallbackImages.length],
   })),
-];
+].map((post) => ({ ...post, slug: post.id, path: `/blog/${post.id}` }));
+
+const postsBySlug = new Map(blogPosts.map((post) => [post.slug, post]));
+
+export function getBlogPost(slug) {
+  return postsBySlug.get(slug) || null;
+}
+
+// Posts to surface as "keep reading" at the foot of a post page.
+export function getRelatedPosts(slug, count = 3) {
+  const index = blogPosts.findIndex((post) => post.slug === slug);
+  if (index === -1) return blogPosts.slice(0, count);
+  const rest = [...blogPosts.slice(index + 1), ...blogPosts.slice(0, index)];
+  return rest.slice(0, count);
+}
