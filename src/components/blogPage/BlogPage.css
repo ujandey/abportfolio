@@ -18,6 +18,12 @@
   padding: 0 32px;
 }
 
+/* Cards are anchors so posts open as real pages — strip the link chrome. */
+.bp a {
+  color: inherit;
+  text-decoration: none;
+}
+
 /* ============================================================ FEATURED HERO */
 
 .bp-featured {
@@ -53,6 +59,7 @@
 /* Lead card ----------------------------------------------------------- */
 
 .bp-lead {
+  display: block;
   position: relative;
   border-radius: 16px;
   overflow: hidden;
@@ -215,6 +222,7 @@
 }
 
 .bp-card__media {
+  display: block;
   aspect-ratio: 16 / 9;
   overflow: hidden;
   background: #10161c;
@@ -273,15 +281,16 @@
   margin: 0 0 20px;
 }
 
+.bp-card__link:hover {
+  color: var(--bp-accent);
+}
+
 .bp-card__more {
   margin-top: auto;
   align-self: flex-start;
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: none;
-  border: none;
-  padding: 0;
   cursor: pointer;
   color: #fff;
   font-family: inherit;
@@ -298,102 +307,6 @@
 
 .bp-card__arrow {
   font-size: 17px;
-}
-
-/* ================================================================= READER */
-
-.bp-reader {
-  position: fixed;
-  inset: 0;
-  z-index: 200;
-  background: #000;
-  display: flex;
-  flex-direction: column;
-  animation: bp-fade 0.25s ease;
-}
-
-@keyframes bp-fade {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-.bp-reader__bar {
-  flex-shrink: 0;
-  padding: 18px 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  background: rgba(0, 0, 0, 0.85);
-  backdrop-filter: blur(8px);
-}
-
-.bp-reader__bar-inner {
-  display: flex;
-  align-items: center;
-}
-
-.bp-reader__close {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  color: rgba(255, 255, 255, 0.7);
-  font-family: var(--bp-font);
-  font-size: 14px;
-  font-weight: 600;
-  transition: color 0.2s ease;
-}
-
-.bp-reader__close:hover {
-  color: #fff;
-}
-
-.bp-reader__scroll {
-  flex: 1;
-  overflow-y: auto;
-}
-
-.bp-reader__col {
-  max-width: 760px;
-  padding-top: 48px;
-  padding-bottom: 96px;
-}
-
-.bp-reader__meta {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 14px;
-  color: rgba(255, 255, 255, 0.5);
-  margin-bottom: 16px;
-}
-
-.bp-reader__title {
-  font-weight: 900;
-  font-size: clamp(30px, 5vw, 52px);
-  line-height: 1.08;
-  letter-spacing: -0.02em;
-  color: #fff;
-  margin: 0 0 28px;
-}
-
-.bp-reader__hero {
-  display: block;
-  width: 100%;
-  height: auto;
-  border-radius: 16px;
-  margin: 0 0 36px;
-}
-
-.bp-reader__text p {
-  font-size: 18px;
-  line-height: 1.8;
-  color: rgba(255, 255, 255, 0.82);
-  margin: 0 0 24px;
 }
 
 /* ================================================================ RESPONSIVE */
@@ -434,9 +347,5 @@
 @media (max-width: 760px) {
   .bp-inner {
     padding: 0 20px;
-  }
-
-  .bp-reader__text p {
-    font-size: 16.5px;
   }
 }

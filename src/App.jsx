@@ -33,7 +33,8 @@ import MentoringPage from "./components/MentoringPage";
 import InvestmentsPage from "./components/InvestmentsPage";
 import PressNewsPage from "./components/PressNewsPage";
 import VirtualRealityPage from "./components/VirtualRealityPage";
-import BlogPage from "./components/BlogPage";
+import BlogPage from "./components/blogPage/BlogPage";
+import BlogPostPage from "./components/blogPage/BlogPostPage";
 import ContactPage from "./components/ContactPage";
 import "./App.css";
 
@@ -94,6 +95,12 @@ function App() {
 
   if (path === "/blog") {
     return <BlogPage />;
+  }
+
+  // Every post has its own page: /blog/<slug>.
+  if (path.startsWith("/blog/")) {
+    const slug = decodeURIComponent(path.slice("/blog/".length).replace(/\/$/, ""));
+    return slug ? <BlogPostPage slug={slug} /> : <BlogPage />;
   }
 
   if (path === "/contact") {

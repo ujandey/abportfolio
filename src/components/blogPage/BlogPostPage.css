@@ -1,0 +1,164 @@
+/* Single blog post page — /blog/<slug>. Shares the .bp shell tokens from
+   BlogPage.css and adds the reading column plus the "keep reading" strip. */
+
+.bpp-article {
+  padding: 44px 0 24px;
+}
+
+.bpp-col {
+  max-width: 760px;
+}
+
+.bpp-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 32px;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 14px;
+  font-weight: 600;
+  transition: color 0.2s ease, gap 0.2s ease;
+}
+
+.bpp-back:hover {
+  color: #fff;
+  gap: 12px;
+}
+
+.bpp-title {
+  font-weight: 900;
+  font-size: clamp(30px, 5vw, 52px);
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  color: #fff;
+  margin: 0 0 18px;
+}
+
+.bpp-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 32px;
+}
+
+.bpp-hero {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  margin: 0 0 36px;
+}
+
+.bpp-text p {
+  font-size: 18px;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.82);
+  margin: 0 0 24px;
+}
+
+/* ============================================================ KEEP READING */
+
+.bpp-related {
+  padding: 56px 0 96px;
+  margin-top: 40px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.bpp-related__heading {
+  font-weight: 800;
+  font-size: 26px;
+  letter-spacing: -0.02em;
+  color: #fff;
+  margin: 0 0 28px;
+}
+
+.bpp-related__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.bpp-related__card {
+  display: block;
+}
+
+.bpp-related__media {
+  aspect-ratio: 16 / 9;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #10161c;
+  margin-bottom: 14px;
+}
+
+.bpp-related__img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.bpp-related__card:hover .bpp-related__img {
+  transform: scale(1.04);
+}
+
+.bpp-related__title {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  color: #fff;
+  margin: 0 0 8px;
+  transition: color 0.2s ease;
+}
+
+.bpp-related__card:hover .bpp-related__title {
+  color: var(--bp-accent);
+}
+
+.bpp-related__excerpt {
+  font-size: 14px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.55);
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ================================================================ MISSING */
+
+.bpp-missing {
+  padding: 120px 32px 160px;
+  text-align: center;
+}
+
+.bpp-missing__title {
+  font-weight: 900;
+  font-size: clamp(28px, 5vw, 46px);
+  letter-spacing: -0.02em;
+  margin: 0 0 14px;
+}
+
+.bpp-missing__text {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 16px;
+  margin: 0 0 28px;
+}
+
+/* ============================================================= RESPONSIVE */
+
+@media (max-width: 860px) {
+  .bpp-related__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 760px) {
+  .bpp-text p {
+    font-size: 16.5px;
+  }
+}
