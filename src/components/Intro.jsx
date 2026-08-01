@@ -1,4 +1,4 @@
-import portraitImg from "../assets/helicopter.jpeg";
+import { introPortraitImg as portraitImg } from "../data";
 import "./Intro.css";
 
 const VENTURES = [

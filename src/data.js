@@ -1,73 +1,114 @@
-import card1 from "./assets/events/card1.jpeg";
-import card2 from "./assets/events/card2.jpeg";
-import card3 from "./assets/events/card3.jpeg";
-import card4 from "./assets/events/card4.jpeg";
-import card5 from "./assets/events/card5.png";
-import card6 from "./assets/events/card6.jpeg";
-import card7 from "./assets/events/card7.jpeg";
-import card8 from "./assets/events/card8.png";
-import drawingPortraitStudy from "./assets/drawing/drawing_img1.jpg";
-import drawingLookingUp from "./assets/drawing/drawing_img4.jpg";
-import drawingChildDove from "./assets/drawing/pencil-work.jpg";
-import drawingSubhasreeGanguly from "./assets/drawing/subhasree-ganguly.jpg";
-import photoPier from "./assets/photography/27.jpg";
-import photoBangkokSkyline from "./assets/photography/6.jpg";
-import photoRoastPlate from "./assets/photography/15.jpg";
-import photoStillLifeGlass from "./assets/photography/img3.jpg";
-import heroImg from "./assets/hero/hero.png";
-import deepblueImg from "./assets/hero/deepblue.jpeg";
-import anandabazarLogo from "./assets/logos/anandabazar-online-logo.png";
-import bizventureLogo from "./assets/logos/bizventure-logo.png";
-import dainikBhaskarLogo from "./assets/logos/dainik-bhaskar-logo.png";
-import dainikJagranLogo from "./assets/logos/Dainik-Jagran-logo.png";
-import kantipurLogo from "./assets/logos/kantipur-logo.png";
-import myfinbLogo from "./assets/logos/myfinb_group_logo.png";
-import smeLogo from "./assets/logos/SME-logo.png";
-import statesmanLogo from "./assets/logos/statesman-logo.png";
-import tedxLogo from "./assets/logos/tedx.png";
-import toiLogo from "./assets/logos/TOI.png";
-import cnbcLogo from "./assets/logos/cnbc.png";
-import ecotimesLogo from "./assets/logos/ecotimes.png";
-import hindustanTimesLogo from "./assets/logos/hindustantimes.png";
-import telegraphLogo from "./assets/logos/telegraph.png";
-import yourstoryLogo from "./assets/logos/yourstory.png";
-import businessStandardLogo from "./assets/logos/business standard.png";
-import tv9Logo from "./assets/logos/TV9.png";
-import abpBanglaLogo from "./assets/logos/ABP bangla.png";
-import ddBanglaLogo from "./assets/logos/DD-bangla.png";
-import startupIndiaLogo from "./assets/logos/startupindia.png";
-import awsLogo from "./assets/logos/aws.png";
-import diplomaticLogo from "./assets/logos/diplomatic.png";
-import wasmeLogo from "./assets/logos/wasme.png";
-import ghanaImg from "./assets/ghana.jpeg";
-import liberiaImg from "./assets/Liberia.png";
-import nagalandImg from "./assets/Nagaland.png";
-import whiteTigerCover from "./assets/books/whitetiger.webp";
-import africaCover from "./assets/books/africa.webp";
-import expertsCover from "./assets/books/experts.jpg";
-import karnaPoster from "./assets/genai/karna-poster-vertical.png";
-import timeTravellerPoster from "./assets/genai/time-traveller-poster-vertical.png";
-import nadaPoster from "./assets/genai/nada-poster-vertical.png";
-import brokenPoster from "./assets/genai/broken-poster-vertical.png";
-import ashwathamaPoster from "./assets/genai/ashwathama-poster-vertical.png";
-import piyushGoyalImg from "./assets/piyush-goyal.jpeg";
-import safiullahPhoto from "./assets/testimonials/Safiullah.jfif";
-import rudyPhoto from "./assets/testimonials/rudy.jfif";
-import koshyPhoto from "./assets/testimonials/koshy.png";
-import finalCrisisCover from "./assets/comics/comics-img1.jpg";
-import finalCrisisPage2 from "./assets/comics/comics-img2.jpg";
-import archerPreviewPage1 from "./assets/comics/comics-img3.jpg";
-import archerCoverAlt from "./assets/comics/comics-img4.jpg";
-import archerPreviewPage2 from "./assets/comics/comics-img5.jpg";
-import archerCover from "./assets/comics/comics-img6.jpg";
-import virtualinfocomLogo from "./assets/companies/virtualinfocom.png";
-import metals8Logo from "./assets/companies/8metals.png";
-import coinnovateventuresLogo from "./assets/companies/coinnovateventures.jpg";
-import deeptechKnowledgeLogo from "./assets/companies/DeepTechKnowledge.jpeg";
-import entreprenuersfaceLogo from "./assets/companies/entreprenuersface.png";
-import glamWorldLogo from "./assets/companies/glam-world.png";
-import igamepublisherLogo from "./assets/companies/igamepublisher.jpg";
-import wlsLogo from "./assets/companies/wls.jpg";
+// ============================================================================
+// PICTURES ON THE LANDING PAGE - EDIT THE URLS BELOW
+// ============================================================================
+// Every image file lives in `public/images/...` and is served from the site
+// root, so "/images/events/card1.jpeg" is the file public/images/events/card1.jpeg.
+//
+// To swap a picture you have two options:
+//   1. Drop your file into the matching folder under public/images/ and point
+//      the URL here at it, e.g. const card1 = "/images/events/my-photo.jpg";
+//   2. Paste any full URL, e.g. "https://images.example.com/photo.jpg" - these
+//      are plain <img src> values, so an external link works as-is.
+//
+// Avoid spaces in file names (a space in a URL has to be written %20).
+// ============================================================================
+
+// --- Events strip (Events section) ---
+const card1 = "/images/events/card1.jpeg";
+const card2 = "/images/events/card2.jpeg";
+const card3 = "/images/events/card3.jpeg";
+const card4 = "/images/events/card4.jpeg";
+const card5 = "/images/events/card5.png";
+const card6 = "/images/events/card6.jpeg";
+const card7 = "/images/events/card7.jpeg";
+const card8 = "/images/events/card8.png";
+
+// --- Hero backdrop + Hunger portrait ---
+const heroImg = "/images/hero/hero.png";
+const deepblueImg = "/images/hero/deepblue.jpeg";
+
+// --- Gallery - drawings ---
+const drawingPortraitStudy = "/images/drawing/drawing_img1.jpg";
+const drawingLookingUp = "/images/drawing/drawing_img4.jpg";
+const drawingChildDove = "/images/drawing/pencil-work.jpg";
+const drawingSubhasreeGanguly = "/images/drawing/subhasree-ganguly.jpg";
+
+// --- Gallery - photographs ---
+const photoPier = "/images/photography/27.jpg";
+const photoBangkokSkyline = "/images/photography/6.jpg";
+const photoRoastPlate = "/images/photography/15.jpg";
+const photoStillLifeGlass = "/images/photography/img3.jpg";
+
+// --- Press / recognition logos (Media wall + Hunger) ---
+const anandabazarLogo = "/images/logos/anandabazar-online-logo.png";
+const bizventureLogo = "/images/logos/bizventure-logo.png";
+const dainikBhaskarLogo = "/images/logos/dainik-bhaskar-logo.png";
+const dainikJagranLogo = "/images/logos/Dainik-Jagran-logo.png";
+const kantipurLogo = "/images/logos/kantipur-logo.png";
+const myfinbLogo = "/images/logos/myfinb_group_logo.png";
+const smeLogo = "/images/logos/SME-logo.png";
+const statesmanLogo = "/images/logos/statesman-logo.png";
+const tedxLogo = "/images/logos/tedx.png";
+const toiLogo = "/images/logos/TOI.png";
+const cnbcLogo = "/images/logos/cnbc.png";
+const ecotimesLogo = "/images/logos/ecotimes.png";
+const hindustanTimesLogo = "/images/logos/hindustantimes.png";
+const telegraphLogo = "/images/logos/telegraph.png";
+const yourstoryLogo = "/images/logos/yourstory.png";
+const businessStandardLogo = "/images/logos/business-standard.png";
+const tv9Logo = "/images/logos/TV9.png";
+const abpBanglaLogo = "/images/logos/abp-bangla.png";
+const ddBanglaLogo = "/images/logos/DD-bangla.png";
+const startupIndiaLogo = "/images/logos/startupindia.png";
+const awsLogo = "/images/logos/aws.png";
+const diplomaticLogo = "/images/logos/diplomatic.png";
+const wasmeLogo = "/images/logos/wasme.png";
+
+// --- Featured moments ---
+const piyushGoyalImg = "/images/moments/piyush-goyal.jpeg";
+const ghanaImg = "/images/global/ghana.jpeg";
+const liberiaImg = "/images/global/Liberia.png";
+const nagalandImg = "/images/global/Nagaland.png";
+
+// --- Books ---
+const whiteTigerCover = "/images/books/whitetiger.webp";
+const africaCover = "/images/books/africa.webp";
+const expertsCover = "/images/books/experts.jpg";
+
+// --- GenAI posters ---
+const karnaPoster = "/images/genai/karna-poster-vertical.png";
+const timeTravellerPoster = "/images/genai/time-traveller-poster-vertical.png";
+const nadaPoster = "/images/genai/nada-poster-vertical.png";
+const brokenPoster = "/images/genai/broken-poster-vertical.png";
+const ashwathamaPoster = "/images/genai/ashwathama-poster-vertical.png";
+
+// --- Testimonial portraits ---
+const safiullahPhoto = "/images/testimonials/Safiullah.jfif";
+const rudyPhoto = "/images/testimonials/rudy.jfif";
+const koshyPhoto = "/images/testimonials/koshy.png";
+
+// --- Comics ---
+const finalCrisisCover = "/images/comics/comics-img1.jpg";
+const finalCrisisPage2 = "/images/comics/comics-img2.jpg";
+const archerPreviewPage1 = "/images/comics/comics-img3.jpg";
+const archerCoverAlt = "/images/comics/comics-img4.jpg";
+const archerPreviewPage2 = "/images/comics/comics-img5.jpg";
+const archerCover = "/images/comics/comics-img6.jpg";
+
+// --- Company logos ---
+const virtualinfocomLogo = "/images/companies/virtualinfocom.png";
+const metals8Logo = "/images/companies/8metals.png";
+const coinnovateventuresLogo = "/images/companies/coinnovateventures.jpg";
+const deeptechKnowledgeLogo = "/images/companies/DeepTechKnowledge.jpeg";
+const entreprenuersfaceLogo = "/images/companies/entreprenuersface.png";
+const glamWorldLogo = "/images/companies/glam-world.png";
+const igamepublisherLogo = "/images/companies/igamepublisher.jpg";
+const wlsLogo = "/images/companies/wls.jpg";
+// --- Pictures the sections read straight from here ---
+export const introPortraitImg = "/images/intro/helicopter.jpeg";
+export const podcastLogoImg = "/images/podcast/podcast-logo.png";
+export const pillarsStageImg = "/images/media/stage.jpeg";
+
 export { heroImg, deepblueImg };
 
 export const navItems = [
@@ -615,7 +656,10 @@ export const companies = [
   },
 ];
 
-// TODO: swap in real stage photos and confirmed booking details once provided
+// TODO: confirm booking details once provided.
+// Card backgrounds: put a picture URL in each slot's `image` below (files
+// go in public/images/speaking/). An empty string keeps the gradient
+// placeholder, so cards can be filled in one at a time.
 export const speakingGroups = [
   {
     slotId: "speaking-intl",
@@ -633,6 +677,7 @@ export const speakingGroups = [
         desc: "A 40-minute mainstage keynote on building responsible GenAI products — Oct 8–9, 2026 at Taets Art & Event Park.",
         cta: "Request this slot",
         photoNote: "Stage photo — World AI Summit keynote",
+        image: "",
       },
       {
         slotId: "speaking-intl-2",
@@ -643,6 +688,7 @@ export const speakingGroups = [
         desc: "Headline panel on AI at enterprise scale across MENA — Nov 17–20, 2026 at the Dubai World Trade Centre.",
         cta: "See panel brief",
         photoNote: "Stage photo — GITEX panel",
+        image: "",
       },
       {
         slotId: "speaking-intl-3",
@@ -653,6 +699,7 @@ export const speakingGroups = [
         desc: "An intimate fireside on AI in financial services — Nov 4–6, 2026 at Singapore EXPO. One slot remaining.",
         cta: "Request this slot",
         photoNote: "Stage photo — SFF fireside chat",
+        image: "",
       },
       {
         slotId: "speaking-intl-4",
@@ -663,6 +710,7 @@ export const speakingGroups = [
         desc: "Centre-stage keynote on the future of human-AI collaboration — Nov 10–13, 2026 at Altice Arena.",
         cta: "Join waitlist",
         photoNote: "Stage photo — Web Summit centre stage",
+        image: "",
       },
     ],
   },
@@ -682,6 +730,7 @@ export const speakingGroups = [
         desc: "Opening keynote on India's AI moment for CXOs and founders — Feb 18–20, 2026 at Grand Hyatt, Mumbai.",
         cta: "Request this slot",
         photoNote: "Stage photo — NTLF keynote",
+        image: "",
       },
       {
         slotId: "speaking-natl-2",
@@ -692,6 +741,7 @@ export const speakingGroups = [
         desc: "A student guest lecture on turning research into product — Mar 6–8, 2026 at the IIT Delhi campus.",
         cta: "See talk outline",
         photoNote: "Stage photo — IIT Delhi guest lecture",
+        image: "",
       },
       {
         slotId: "speaking-natl-3",
@@ -702,6 +752,7 @@ export const speakingGroups = [
         desc: "Panel on scaling deep-tech from India to the world — Nov 19–21, 2026 at Palace Grounds, Bengaluru.",
         cta: "Request this slot",
         photoNote: "Stage photo — BTS panel",
+        image: "",
       },
       {
         slotId: "speaking-natl-4",
@@ -712,6 +763,7 @@ export const speakingGroups = [
         desc: "Keynote on the founder's mindset in the age of AI — Dec 9–11, 2026 at HICC, Hyderabad.",
         cta: "Request this slot",
         photoNote: "Stage photo — TiE Global keynote",
+        image: "",
       },
     ],
   },

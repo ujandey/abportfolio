@@ -1,5 +1,4 @@
-import stageImg from "../assets/media/stage.jpeg";
-import { pillars } from "../data";
+import { pillars, pillarsStageImg as stageImg } from "../data";
 import "./Pillars.css";
 
 export default function Pillars() {

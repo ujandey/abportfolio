@@ -1,6 +1,5 @@
 import ImagePlaceholder from "./ImagePlaceholder";
-import { featured, episodes } from "../data";
-import podcastLogo from "../assets/podcast-logo.png";
+import { featured, episodes, podcastLogoImg as podcastLogo } from "../data";
 import "./Podcast.css";
 
 function getYoutubeId(url) {

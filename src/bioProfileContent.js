@@ -3,12 +3,12 @@
 // only grouped into blocks so the page can pair it with photographs. If
 // bioContent.md changes, mirror the change here line for line.
 
-import profileStage from "./assets/events/card7.jpeg";
-import profileSeated from "./assets/events/card2.jpeg";
-import profilePanel from "./assets/events/card1.jpeg";
+const profileStage = "/images/events/card7.jpeg";
+const profileSeated = "/images/events/card2.jpeg";
+const profilePanel = "/images/events/card1.jpeg";
 import profileWalking from "./assets/bj-banner/IMG_2533.JPG.jpeg";
 import profileCar from "./assets/bj-banner/GXJP2960.JPG.jpeg";
-import profileDubai from "./assets/events/card4.jpeg";
+const profileDubai = "/images/events/card4.jpeg";
 
 export const profileLede = `Serial Entrepreneur (Since 1998), Technologist, Angel Investor, Public Speaker (Since 2008), TEDx Speaker, Business Matchmaking Expert, Government Advisor,Jury National Startup Award, Artist, Author, Community Builder (Since 2010), Game Programmer (Since 1998 from legacy to latest game engines), Virtual Reality Specialist (Since 2006 with VRML to C# using game engines), AR Specialist, AI Coder (Since 2002), Gen AI Developer (Since 2023), Blockchain Specialist (Since 2017 mainly in fintech, crypto and healthtech) & Globe Trotter (Over 101+ countries business network). Founder of India's one of the first geme development company since 1998 and he is creator of India's first movie using Gen AI in 2025.`;
 
