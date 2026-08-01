@@ -4,7 +4,7 @@ import Footer from "./Footer";
 import ImagePlaceholder from "./ImagePlaceholder";
 import { techStack } from "../data";
 import heroVideo from "../assets/video/ArijitBhattacharyya.mp4";
-import deepblueImg from "../assets/hero/deepblue.jpeg";
+const deepblueImg = "/images/hero/deepblue.jpeg";
 import {
   techEvolution,
   enterpriseRows,

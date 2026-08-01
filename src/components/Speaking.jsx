@@ -1,10 +1,9 @@
 import ImagePlaceholder from "./ImagePlaceholder";
 import { speakingGroups } from "../data";
-import { speakingImageFor } from "../speakingImages";
 import "./Speaking.css";
 
 function SlotBackground({ slot }) {
-  const src = speakingImageFor(slot.slotId);
+  const src = slot.image;
 
   if (!src) {
     return (
